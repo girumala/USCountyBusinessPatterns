@@ -1,0 +1,822 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="10/27/2013 8:42:37 AM"
+  DTS:CreationName="SSIS.Package.3"
+  DTS:CreatorComputerName="SIVA-PC"
+  DTS:CreatorName="siva-pc\siva"
+  DTS:DTSID="{CAFA4B3E-4051-4F2F-B629-F4C312535E1A}"
+  DTS:ExecutableType="SSIS.Package.3"
+  DTS:LastModifiedProductVersion="11.0.2100.60"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="LoadStateCounty"
+  DTS:PackageType="5"
+  DTS:ProtectionLevel="0"
+  DTS:VersionBuild="20"
+  DTS:VersionGUID="{BF8EFBF6-6A19-4EB2-8BA7-84B638D64770}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">6</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager Error Output StateCounty]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{8D7032ED-59E7-4418-9D53-F89C94557AD5}"
+      DTS:ObjectName="Flat File Connection Manager Error Output StateCounty">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\USCountyBusinessPatterns\ErrorOutput\ErrorOutputStateCounty.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="2"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="fipstate"
+              DTS:DTSID="{079098FB-52C0-4500-8B96-6866F3A96E9F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="3"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="fipscty"
+              DTS:DTSID="{88F02F60-7913-4F1B-94BA-31C9A1090922}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ctyname"
+              DTS:DTSID="{0DA140D9-7B87-4C22-90C0-E54C5DD32C59}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ErrorCode"
+              DTS:DTSID="{27399B1A-BF81-4802-9020-5C34616F2FF9}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ErrorColumn"
+              DTS:DTSID="{720AD24A-0163-4F91-8157-9E7FB9A3AB31}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager StateCounty]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{DDAB7FA0-3597-42AD-B71F-2D1A1F5110CE}"
+      DTS:ObjectName="Flat File Connection Manager StateCounty">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x0022_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\USCountyBusinessPatterns\SourceTextFiles_StateCounty\georef02.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="2"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="fipstate"
+              DTS:DTSID="{AB7727EA-7090-4F5D-BEF2-BDAD856934F1}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="3"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="fipscty"
+              DTS:DTSID="{E1DB6F05-67CE-473C-81A0-E308F1FFFFB1}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ctyname"
+              DTS:DTSID="{E674123B-3067-4328-B5D1-2ED4CAF25474}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{B193F7F7-3401-4B3A-ACA9-766F97DDA957}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="FileName3">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\FELC - Load multiple stateCounty text files"
+      DTS:CreationName="STOCK:FOREACHLOOP"
+      DTS:Description="Foreach Loop Container"
+      DTS:DTSID="{FDAFAC9F-F740-4E33-827B-84685CFA6F4A}"
+      DTS:ExecutableType="STOCK:FOREACHLOOP"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="FELC - Load multiple stateCounty text files">
+      <DTS:ForEachEnumerator
+        DTS:CreationName="DTS.ForEachFileEnumerator.3"
+        DTS:DTSID="{EC4F02EE-5EFA-4F5A-8AA8-F34F585C3783}"
+        DTS:ObjectName="{EC4F02EE-5EFA-4F5A-8AA8-F34F585C3783}">
+        <DTS:ObjectData>
+          <ForEachFileEnumeratorProperties>
+            <FEFEProperty
+              Folder="C:\USCountyBusinessPatterns\SourceTextFiles_StateCounty" />
+            <FEFEProperty
+              FileSpec="georef*.txt" />
+            <FEFEProperty
+              FileNameRetrievalType="0" />
+            <FEFEProperty
+              Recurse="0" />
+          </ForEachFileEnumeratorProperties>
+        </DTS:ObjectData>
+      </DTS:ForEachEnumerator>
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\FELC - Load multiple stateCounty text files\DFT Load StateCounty table"
+          DTS:CreationName="SSIS.Pipeline.3"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{2168A4B6-AF23-4B08-9CDD-7882D397609C}"
+          DTS:ExecutableType="SSIS.Pipeline.3"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="DFT Load StateCounty table"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\FELC - Load multiple stateCounty text files\DFT Load StateCounty table\FF_DST ErrorOutPut to text file"
+                  componentClassID="{8DA75FED-1B7C-407D-B2AD-2B24209CCCA4}"
+                  contactInfo="Flat File Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Flat File Destination"
+                  localeId="1033"
+                  name="FF_DST ErrorOutPut to text file">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="Specifies whether the data will overwrite or append to the destination file."
+                      name="Overwrite">true</property>
+                    <property
+                      dataType="System.Null"
+                      description="Specifies the text to write to the destination file before any data is written."
+                      expressionType="Notify"
+                      name="Header" />
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\FELC - Load multiple stateCounty text files\DFT Load StateCounty table\FF_DST ErrorOutPut to text file.Connections[FlatFileConnection]"
+                      connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager Error Output StateCounty]"
+                      connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager Error Output StateCounty]"
+                      name="FlatFileConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\FELC - Load multiple stateCounty text files\DFT Load StateCounty table\FF_DST ErrorOutPut to text file.Inputs[Flat File Destination Input]"
+                      hasSideEffects="true"
+                      name="Flat File Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\FELC - Load multiple stateCounty text files\DFT Load StateCounty table\FF_DST ErrorOutPut to text file.Inputs[Flat File Destination Input].Columns[fipstate]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="2"
+                          cachedName="fipstate"
+                          externalMetadataColumnId="Package\FELC - Load multiple stateCounty text files\DFT Load StateCounty table\FF_DST ErrorOutPut to text file.Inputs[Flat File Destination Input].ExternalColumns[fipstate]"
+                          lineageId="Package\FELC - Load multiple stateCounty text files\DFT Load StateCounty table\FF_SRC StateCounty Text Files.Outputs[Flat File Source Output].Columns[fipstate]" />
+                        <inputColumn
+                          refId="Package\FELC - Load multiple stateCounty text files\DFT Load StateCounty table\FF_DST ErrorOutPut to text file.Inputs[Flat File Destination Input].Columns[fipscty]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="3"
+                          cachedName="fipscty"
+                          externalMetadataColumnId="Package\FELC - Load multiple stateCounty text files\DFT Load StateCounty table\FF_DST ErrorOutPut to text file.Inputs[Flat File Destination Input].ExternalColumns[fipscty]"
+                          lineageId="Package\FELC - Load multiple stateCounty text files\DFT Load StateCounty table\FF_SRC StateCounty Text Files.Outputs[Flat File Source Output].Columns[fipscty]" />
+                        <inputColumn
+                          refId="Package\FELC - Load multiple stateCounty text files\DFT Load StateCounty table\FF_DST ErrorOutPut to text file.Inputs[Flat File Destination Input].Columns[ctyname]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="ctyname"
+                          externalMetadataColumnId="Package\FELC - Load multiple stateCounty text files\DFT Load StateCounty table\FF_DST ErrorOutPut to text file.Inputs[Flat File Destination Input].ExternalColumns[ctyname]"
+                          lineageId="Package\FELC - Load multiple stateCounty text files\DFT Load StateCounty table\FF_SRC StateCounty Text Files.Outputs[Flat File Source Output].Columns[ctyname]" />
+                        <inputColumn
+                          refId="Package\FELC - Load multiple stateCounty text files\DFT Load StateCounty table\FF_DST ErrorOutPut to text file.Inputs[Flat File Destination Input].Columns[ErrorCode]"
+                          cachedDataType="i4"
+                          cachedName="ErrorCode"
+                          externalMetadataColumnId="Package\FELC - Load multiple stateCounty text files\DFT Load StateCounty table\FF_DST ErrorOutPut to text file.Inputs[Flat File Destination Input].ExternalColumns[ErrorCode]"
+                          lineageId="Package\FELC - Load multiple stateCounty text files\DFT Load StateCounty table\OLE_DST StateCounty table.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]" />
+                        <inputColumn
+                          refId="Package\FELC - Load multiple stateCounty text files\DFT Load StateCounty table\FF_DST ErrorOutPut to text file.Inputs[Flat File Destination Input].Columns[ErrorColumn]"
+                          cachedDataType="i4"
+                          cachedName="ErrorColumn"
+                          externalMetadataColumnId="Package\FELC - Load multiple stateCounty text files\DFT Load StateCounty table\FF_DST ErrorOutPut to text file.Inputs[Flat File Destination Input].ExternalColumns[ErrorColumn]"
+                          lineageId="Package\FELC - Load multiple stateCounty text files\DFT Load StateCounty table\OLE_DST StateCounty table.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\FELC - Load multiple stateCounty text files\DFT Load StateCounty table\FF_DST ErrorOutPut to text file.Inputs[Flat File Destination Input].ExternalColumns[fipstate]"
+                          codePage="1252"
+                          dataType="str"
+                          length="2"
+                          name="fipstate" />
+                        <externalMetadataColumn
+                          refId="Package\FELC - Load multiple stateCounty text files\DFT Load StateCounty table\FF_DST ErrorOutPut to text file.Inputs[Flat File Destination Input].ExternalColumns[fipscty]"
+                          codePage="1252"
+                          dataType="str"
+                          length="3"
+                          name="fipscty" />
+                        <externalMetadataColumn
+                          refId="Package\FELC - Load multiple stateCounty text files\DFT Load StateCounty table\FF_DST ErrorOutPut to text file.Inputs[Flat File Destination Input].ExternalColumns[ctyname]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="ctyname" />
+                        <externalMetadataColumn
+                          refId="Package\FELC - Load multiple stateCounty text files\DFT Load StateCounty table\FF_DST ErrorOutPut to text file.Inputs[Flat File Destination Input].ExternalColumns[ErrorCode]"
+                          dataType="i4"
+                          name="ErrorCode" />
+                        <externalMetadataColumn
+                          refId="Package\FELC - Load multiple stateCounty text files\DFT Load StateCounty table\FF_DST ErrorOutPut to text file.Inputs[Flat File Destination Input].ExternalColumns[ErrorColumn]"
+                          dataType="i4"
+                          name="ErrorColumn" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                </component>
+                <component
+                  refId="Package\FELC - Load multiple stateCounty text files\DFT Load StateCounty table\FF_SRC StateCounty Text Files"
+                  componentClassID="{D23FD76B-F51D-420F-BBCB-19CBF6AC1AB4}"
+                  contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+                  description="Flat File Source"
+                  localeId="1033"
+                  name="FF_SRC StateCounty Text Files"
+                  usesDispositions="true"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="Specifies whether zero-length columns are treated as null."
+                      name="RetainNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                      name="FileNameColumnName"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\FELC - Load multiple stateCounty text files\DFT Load StateCounty table\FF_SRC StateCounty Text Files.Connections[FlatFileConnection]"
+                      connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager StateCounty]"
+                      connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager StateCounty]"
+                      name="FlatFileConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\FELC - Load multiple stateCounty text files\DFT Load StateCounty table\FF_SRC StateCounty Text Files.Outputs[Flat File Source Output]"
+                      name="Flat File Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\FELC - Load multiple stateCounty text files\DFT Load StateCounty table\FF_SRC StateCounty Text Files.Outputs[Flat File Source Output].Columns[fipstate]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\FELC - Load multiple stateCounty text files\DFT Load StateCounty table\FF_SRC StateCounty Text Files.Outputs[Flat File Source Output].ExternalColumns[fipstate]"
+                          length="2"
+                          lineageId="Package\FELC - Load multiple stateCounty text files\DFT Load StateCounty table\FF_SRC StateCounty Text Files.Outputs[Flat File Source Output].Columns[fipstate]"
+                          name="fipstate"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\FELC - Load multiple stateCounty text files\DFT Load StateCounty table\FF_SRC StateCounty Text Files.Outputs[Flat File Source Output].Columns[fipscty]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\FELC - Load multiple stateCounty text files\DFT Load StateCounty table\FF_SRC StateCounty Text Files.Outputs[Flat File Source Output].ExternalColumns[fipscty]"
+                          length="3"
+                          lineageId="Package\FELC - Load multiple stateCounty text files\DFT Load StateCounty table\FF_SRC StateCounty Text Files.Outputs[Flat File Source Output].Columns[fipscty]"
+                          name="fipscty"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\FELC - Load multiple stateCounty text files\DFT Load StateCounty table\FF_SRC StateCounty Text Files.Outputs[Flat File Source Output].Columns[ctyname]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\FELC - Load multiple stateCounty text files\DFT Load StateCounty table\FF_SRC StateCounty Text Files.Outputs[Flat File Source Output].ExternalColumns[ctyname]"
+                          length="50"
+                          lineageId="Package\FELC - Load multiple stateCounty text files\DFT Load StateCounty table\FF_SRC StateCounty Text Files.Outputs[Flat File Source Output].Columns[ctyname]"
+                          name="ctyname"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\FELC - Load multiple stateCounty text files\DFT Load StateCounty table\FF_SRC StateCounty Text Files.Outputs[Flat File Source Output].ExternalColumns[fipstate]"
+                          codePage="1252"
+                          dataType="str"
+                          length="2"
+                          name="fipstate" />
+                        <externalMetadataColumn
+                          refId="Package\FELC - Load multiple stateCounty text files\DFT Load StateCounty table\FF_SRC StateCounty Text Files.Outputs[Flat File Source Output].ExternalColumns[fipscty]"
+                          codePage="1252"
+                          dataType="str"
+                          length="3"
+                          name="fipscty" />
+                        <externalMetadataColumn
+                          refId="Package\FELC - Load multiple stateCounty text files\DFT Load StateCounty table\FF_SRC StateCounty Text Files.Outputs[Flat File Source Output].ExternalColumns[ctyname]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="ctyname" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\FELC - Load multiple stateCounty text files\DFT Load StateCounty table\FF_SRC StateCounty Text Files.Outputs[Flat File Source Error Output]"
+                      isErrorOut="true"
+                      name="Flat File Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\FELC - Load multiple stateCounty text files\DFT Load StateCounty table\FF_SRC StateCounty Text Files.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                          codePage="1252"
+                          dataType="text"
+                          description="Flat File Source Error Output Column"
+                          lineageId="Package\FELC - Load multiple stateCounty text files\DFT Load StateCounty table\FF_SRC StateCounty Text Files.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                          name="Flat File Source Error Output Column" />
+                        <outputColumn
+                          refId="Package\FELC - Load multiple stateCounty text files\DFT Load StateCounty table\FF_SRC StateCounty Text Files.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\FELC - Load multiple stateCounty text files\DFT Load StateCounty table\FF_SRC StateCounty Text Files.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\FELC - Load multiple stateCounty text files\DFT Load StateCounty table\FF_SRC StateCounty Text Files.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\FELC - Load multiple stateCounty text files\DFT Load StateCounty table\FF_SRC StateCounty Text Files.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\FELC - Load multiple stateCounty text files\DFT Load StateCounty table\OLE_DST StateCounty table"
+                  componentClassID="{4ADA7EAA-136C-4215-8098-D7A7C27FC0D1}"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="OLE_DST StateCounty table"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dbo].[StateCounty]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS,ROWS_PER_BATCH = 10000</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">10000</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\FELC - Load multiple stateCounty text files\DFT Load StateCounty table\OLE_DST StateCounty table.Connections[OleDbConnection]"
+                      connectionManagerID="{622FF495-5314-436D-A20D-6FE4E292CED9}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[SIVA-PC.USCountyBusinessPatternsStaging 1]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\FELC - Load multiple stateCounty text files\DFT Load StateCounty table\OLE_DST StateCounty table.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="RedirectRow"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\FELC - Load multiple stateCounty text files\DFT Load StateCounty table\OLE_DST StateCounty table.Inputs[OLE DB Destination Input].Columns[fipstate]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="2"
+                          cachedName="fipstate"
+                          externalMetadataColumnId="Package\FELC - Load multiple stateCounty text files\DFT Load StateCounty table\OLE_DST StateCounty table.Inputs[OLE DB Destination Input].ExternalColumns[FipState]"
+                          lineageId="Package\FELC - Load multiple stateCounty text files\DFT Load StateCounty table\FF_SRC StateCounty Text Files.Outputs[Flat File Source Output].Columns[fipstate]" />
+                        <inputColumn
+                          refId="Package\FELC - Load multiple stateCounty text files\DFT Load StateCounty table\OLE_DST StateCounty table.Inputs[OLE DB Destination Input].Columns[fipscty]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="3"
+                          cachedName="fipscty"
+                          externalMetadataColumnId="Package\FELC - Load multiple stateCounty text files\DFT Load StateCounty table\OLE_DST StateCounty table.Inputs[OLE DB Destination Input].ExternalColumns[FipsCty]"
+                          lineageId="Package\FELC - Load multiple stateCounty text files\DFT Load StateCounty table\FF_SRC StateCounty Text Files.Outputs[Flat File Source Output].Columns[fipscty]" />
+                        <inputColumn
+                          refId="Package\FELC - Load multiple stateCounty text files\DFT Load StateCounty table\OLE_DST StateCounty table.Inputs[OLE DB Destination Input].Columns[ctyname]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="ctyname"
+                          externalMetadataColumnId="Package\FELC - Load multiple stateCounty text files\DFT Load StateCounty table\OLE_DST StateCounty table.Inputs[OLE DB Destination Input].ExternalColumns[CtyName]"
+                          lineageId="Package\FELC - Load multiple stateCounty text files\DFT Load StateCounty table\FF_SRC StateCounty Text Files.Outputs[Flat File Source Output].Columns[ctyname]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\FELC - Load multiple stateCounty text files\DFT Load StateCounty table\OLE_DST StateCounty table.Inputs[OLE DB Destination Input].ExternalColumns[StateCountyId]"
+                          dataType="i4"
+                          name="StateCountyId" />
+                        <externalMetadataColumn
+                          refId="Package\FELC - Load multiple stateCounty text files\DFT Load StateCounty table\OLE_DST StateCounty table.Inputs[OLE DB Destination Input].ExternalColumns[FipState]"
+                          codePage="1252"
+                          dataType="str"
+                          length="2"
+                          name="FipState" />
+                        <externalMetadataColumn
+                          refId="Package\FELC - Load multiple stateCounty text files\DFT Load StateCounty table\OLE_DST StateCounty table.Inputs[OLE DB Destination Input].ExternalColumns[FipsCty]"
+                          codePage="1252"
+                          dataType="str"
+                          length="3"
+                          name="FipsCty" />
+                        <externalMetadataColumn
+                          refId="Package\FELC - Load multiple stateCounty text files\DFT Load StateCounty table\OLE_DST StateCounty table.Inputs[OLE DB Destination Input].ExternalColumns[CtyName]"
+                          codePage="1252"
+                          dataType="str"
+                          length="250"
+                          name="CtyName" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\FELC - Load multiple stateCounty text files\DFT Load StateCounty table\OLE_DST StateCounty table.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\FELC - Load multiple stateCounty text files\DFT Load StateCounty table\OLE_DST StateCounty table.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\FELC - Load multiple stateCounty text files\DFT Load StateCounty table\OLE_DST StateCounty table.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\FELC - Load multiple stateCounty text files\DFT Load StateCounty table\OLE_DST StateCounty table.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\FELC - Load multiple stateCounty text files\DFT Load StateCounty table\OLE_DST StateCounty table.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\FELC - Load multiple stateCounty text files\DFT Load StateCounty table\OLE_DST StateCounty table.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\FELC - Load multiple stateCounty text files\DFT Load StateCounty table.Paths[Flat File Source Output]"
+                  endId="Package\FELC - Load multiple stateCounty text files\DFT Load StateCounty table\OLE_DST StateCounty table.Inputs[OLE DB Destination Input]"
+                  name="Flat File Source Output"
+                  startId="Package\FELC - Load multiple stateCounty text files\DFT Load StateCounty table\FF_SRC StateCounty Text Files.Outputs[Flat File Source Output]" />
+                <path
+                  refId="Package\FELC - Load multiple stateCounty text files\DFT Load StateCounty table.Paths[OLE DB Destination Error Output]"
+                  endId="Package\FELC - Load multiple stateCounty text files\DFT Load StateCounty table\FF_DST ErrorOutPut to text file.Inputs[Flat File Destination Input]"
+                  name="OLE DB Destination Error Output"
+                  startId="Package\FELC - Load multiple stateCounty text files\DFT Load StateCounty table\OLE_DST StateCounty table.Outputs[OLE DB Destination Error Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:ForEachVariableMappings>
+        <DTS:ForEachVariableMapping
+          DTS:CreationName=""
+          DTS:DTSID="{D9F494A3-2984-4E0A-A631-8225E528A8E0}"
+          DTS:ObjectName="{D9F494A3-2984-4E0A-A631-8225E528A8E0}"
+          DTS:ValueIndex="0"
+          DTS:VariableName="User::FileName3" />
+      </DTS:ForEachVariableMappings>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\SQL Remove Duplicates from StateCounty table"
+      DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{13830836-955E-4467-9490-ECAA806360C7}"
+      DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="SQL Remove Duplicates from StateCounty table"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{622FF495-5314-436D-A20D-6FE4E292CED9}"
+          SQLTask:SqlStatementSource="DELETE FROM StateCounty&#xA;Where statecountyID not in (&#xA;SELECT max(stateCountyID) from stateCounty&#xA;Group by fipstate,fipscty, ctyname);" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\SQL Truncate StateCounty"
+      DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{AA53C8CB-E715-45E4-8406-D4453AEEF209}"
+      DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="SQL Truncate StateCounty"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{622FF495-5314-436D-A20D-6FE4E292CED9}"
+          SQLTask:SqlStatementSource="TRUNCATE TABLE StateCounty" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{24658014-E404-4F2C-8225-9031B45823FB}"
+      DTS:From="Package\FELC - Load multiple stateCounty text files"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\SQL Remove Duplicates from StateCounty table" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{07FF81B6-DADE-4641-8254-17CDD999A453}"
+      DTS:From="Package\SQL Truncate StateCounty"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\FELC - Load multiple stateCounty text files" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="sql11">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="267,42"
+          Id="Package\FELC - Load multiple stateCounty text files\DFT Load StateCounty table"
+          TopLeft="5.5,5.5" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="278,103"
+          Size="278,146"
+          Id="Package\FELC - Load multiple stateCounty text files"
+          TopLeft="314,199.5" />
+        <NodeLayout
+          Size="303,42"
+          Id="Package\SQL Remove Duplicates from StateCounty table"
+          TopLeft="301.5,405.5" />
+        <NodeLayout
+          Size="203,42"
+          Id="Package\SQL Truncate StateCounty"
+          TopLeft="351.5,97.5" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="453,345.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="453,139.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\FELC - Load multiple stateCounty text files\DFT Load StateCounty table">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="226,42"
+          Id="Package\FELC - Load multiple stateCounty text files\DFT Load StateCounty table\FF_SRC StateCounty Text Files"
+          TopLeft="252.5,40.5" />
+        <NodeLayout
+          Size="226,42"
+          Id="Package\FELC - Load multiple stateCounty text files\DFT Load StateCounty table\FF_DST ErrorOutPut to text file"
+          TopLeft="252.5,244.5" />
+        <NodeLayout
+          Size="226,42"
+          Id="Package\FELC - Load multiple stateCounty text files\DFT Load StateCounty table\OLE_DST StateCounty table"
+          TopLeft="252.5,142.5" />
+        <EdgeLayout
+          Id="Package\FELC - Load multiple stateCounty text files\DFT Load StateCounty table.Paths[Flat File Source Output]"
+          TopLeft="365.5,82.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\FELC - Load multiple stateCounty text files\DFT Load StateCounty table.Paths[OLE DB Destination Error Output]"
+          TopLeft="365.5,184.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-73.20890625,20.533203125,146.4178125,11.43359375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\FELC - Load multiple stateCounty text files\DFT Load StateCounty table\OLE_DST StateCounty table">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

@@ -1,0 +1,125 @@
+SELECT 
+FROM
+[Max Min Manufacturing DM]
+
+
+SELECT [product type].members on columns,
+[year].members on rows
+from
+[Max Min Manufacturing DM]
+where [measures].[accepted products]
+
+SELECT [product type].members on columns,
+[year].members on rows
+from
+[Max Min Manufacturing DM]
+where [measures].[rejected products]
+
+SELECT [product type].members on columns,
+[year].members on rows
+from
+[Max Min Manufacturing DM]
+where ([measures].[total products], [Plant].&[3])
+
+SELECT non empty filter(
+			[Product].members,
+		 ([Month].&[201112], [Measures].[Number on back order] 
+		 ) <
+		 ([Month].&[201111], [Measures].[Number on back order] 
+		 )
+	 ) on columns,
+	 [Month].[201112] on rows
+FROM
+[Max Min Manufacturing DM]
+WHERE  [measures].[accepted products]
+
+WITH SET [American] AS
+{[American GI], [US Army Pilot], [US Navy Gunner's Mate]}
+
+SELECT {[aMERICAN] } ON COLUMNS,
+        [yEAR].MEMBERS ON ROWS
+		FROM [Max Min Manufacturing DM]
+		WHERE [Measures].[total products]
+
+WITH 
+    MEMBER [World War II].[American figures] AS
+	[American GI] + [US Army Pilot] + [US Navy Gunner's Mate]
+	MEMBER [World War II].[British figures] AS
+	[British Tank Commander] + [RAF Pilot]
+	MEMBER [World War II].[Russian figures] AS
+	[Russian Infantry] + [Russian Tank Commander]
+	MEMBER [World War II].[German figures] AS
+	[German panzer Driver]
+
+SELECT {[World War II].[American figures],
+       [World War II].[British figures],
+	   [World War II].[Russian figures],
+	   [World War II].[German figures] } oN COLUMNS,
+	   [yEAR].MEMBERS ON ROWS
+	FROM [Max Min Manufacturing DM]
+		WHERE [Measures].[total products]
+
+ WITH 
+     MEMBER [Measures].[percent of parent] AS
+	 Cstr(Round(([Product Hierarchy].CurrentMember, [Measures].[Total Products]) * 100 /
+	 ([Product Hierarchy].CurrentMember.Parent,
+	                        [Measures].[Total Products]),2) )+ "%"
+
+ SELECT [Product Type].Members on Columns,
+       [Year].Members on Rows
+	   FROM [Max Min Manufacturing DM]
+	   WHERE [Measures].[percent of parent]
+
+-- CROSSJOIN
+--CROSSJOIN( «Set1», «Set2» )
+
+SELECT NON EMPTY CROSSJOIN([PRODUCT TYPE].members, [Plant].Members) on COLUMNS,
+        [Year].Members on ROWS
+		FROM [Max Min Manufacturing DM]
+		WHERE [Measures].[total products]
+
+
+
+--BOTTOMCOUNT( «Set», «Count»[, «Numeric Expression»] )
+
+--TOPCOUNT( «Set», «Count»[, «Numeric Expression»] )
+
+select TOPCOUNT([Product].members, 5,
+                 [Measures].[total products]) on columns
+				 FROM [Max Min Manufacturing DM]
+
+select BOTTOMCOUNT([Machine].members, 3,
+                    [Measures].[total products]) on columns
+				 FROM [Max Min Manufacturing DM]
+
+select TOPCOUNT([Product].members, 5,
+                 [Measures].[total products]) on columns,
+				 [YEAR].[2010] on rows
+				 FROM [Max Min Manufacturing DM]
+-- it will bring top products for the defaul year 2011 (sort order) and display the
+-- data for 2010
+
+WITH 
+    MEMBER [Measures].[Avg per month] AS
+	'Round (SUM(Descendants([Date hierarchy].CurrentMember, [Date]),
+	               [Measures].[total products]) /
+				   COUNT(Descendants([Date Hierarchy].CurrentMember, [Date])),0)'
+
+SELECT [Year].members on columns,
+[Product type].members on rows
+from [Max Min Manufacturing DM]
+WHERE [mEASURES].[AVG PER MONTH]
+
+--Columns, Rows, Pages, Sections and Chapters
+
+--Axis(0), Axis(1)
+--128 query dimensions
+
+SELECT [product type].members on axis(0),
+[year].members on axis(1),
+[Material].members on axis(2)
+	FROM [Max Min Manufacturing DM]
+		WHERE [Measures].[total products]
+
+select [Bear and cub].dimension
+ FROM [Max Min Manufacturing DM]

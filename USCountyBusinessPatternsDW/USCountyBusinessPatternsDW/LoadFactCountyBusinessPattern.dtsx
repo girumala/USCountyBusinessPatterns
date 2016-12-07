@@ -1,0 +1,1591 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="10/30/2013 10:56:39 AM"
+  DTS:CreationName="SSIS.Package.3"
+  DTS:CreatorComputerName="SIVA-PC"
+  DTS:CreatorName="siva-pc\siva"
+  DTS:DTSID="{337D1BC2-A045-48AD-8380-99BB6AE7ED1E}"
+  DTS:ExecutableType="SSIS.Package.3"
+  DTS:LastModifiedProductVersion="11.0.2100.60"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="LoadFactCountyBusinessPattern"
+  DTS:PackageType="5"
+  DTS:ProtectionLevel="0"
+  DTS:VersionBuild="6"
+  DTS:VersionGUID="{2223B41D-B9ED-445A-94AE-B5CA0F89AF2C}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">6</DTS:Property>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\DFT - Load FactCountyBusinessPattern table"
+      DTS:CreationName="SSIS.Pipeline.3"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{472B6EBD-40E0-445D-8DC9-B01B117138E8}"
+      DTS:ExecutableType="SSIS.Pipeline.3"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="DFT - Load FactCountyBusinessPattern table"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\DFT - Load FactCountyBusinessPattern table\LKP - DimCounty"
+              componentClassID="{671046B0-AA63-4C9F-90E4-C06E0B710CE3}"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="LKP - DimCounty"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from [dbo].[DimCounty]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (select * from [dbo].[DimCounty]) [refTable]
+where [refTable].[CountyAK] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="CountySK" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="CountyAK" dataType="DT_STR" length="5" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="StateName" dataType="DT_STR" length="250" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="CountyName" dataType="DT_STR" length="250" precision="0" scale="0" codePage="1252"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\DFT - Load FactCountyBusinessPattern table\OLE_SRC CountyBusinessPattern table.Outputs[OLE DB Source Output].Columns[CountyAK]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT - Load FactCountyBusinessPattern table\LKP - DimCounty.Connections[OleDbConnection]"
+                  connectionManagerID="{0F1CCC37-6CC5-43E2-8C89-FD2BCA9DBE41}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[SIVA-PC.USCountyBusinessPatternsDW]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DFT - Load FactCountyBusinessPattern table\LKP - DimCounty.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT - Load FactCountyBusinessPattern table\LKP - DimCounty.Inputs[Lookup Input].Columns[CountyAK]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="5"
+                      cachedName="CountyAK"
+                      lineageId="Package\DFT - Load FactCountyBusinessPattern table\OLE_SRC CountyBusinessPattern table.Outputs[OLE DB Source Output].Columns[CountyAK]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">CountyAK</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT - Load FactCountyBusinessPattern table\LKP - DimCounty.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  errorRowDisposition="IgnoreFailure"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\DFT - Load FactCountyBusinessPattern table\LKP - DimCounty.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT - Load FactCountyBusinessPattern table\LKP - DimCounty.Outputs[Lookup Match Output].Columns[CountySK]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\DFT - Load FactCountyBusinessPattern table\LKP - DimCounty.Outputs[Lookup Match Output].Columns[CountySK]"
+                      name="CountySK"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">CountySK</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT - Load FactCountyBusinessPattern table\LKP - DimCounty.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\DFT - Load FactCountyBusinessPattern table\LKP - DimCounty.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT - Load FactCountyBusinessPattern table\LKP - DimCounty.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\DFT - Load FactCountyBusinessPattern table\LKP - DimCounty.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT - Load FactCountyBusinessPattern table\LKP - DimCounty.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT - Load FactCountyBusinessPattern table\LKP - DimCounty.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT - Load FactCountyBusinessPattern table\LKP - DimCounty.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT - Load FactCountyBusinessPattern table\LKP - DimCounty.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT - Load FactCountyBusinessPattern table\LKP - DimNaics"
+              componentClassID="{671046B0-AA63-4C9F-90E4-C06E0B710CE3}"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="LKP - DimNaics"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from [dbo].[DimNaics]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (select * from [dbo].[DimNaics]) [refTable]
+where [refTable].[NaicsAK] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="NaicsSK" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="NaicsAK" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Description" dataType="DT_STR" length="250" precision="0" scale="0" codePage="1252"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\DFT - Load FactCountyBusinessPattern table\OLE_SRC CountyBusinessPattern table.Outputs[OLE DB Source Output].Columns[NaicsAK]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT - Load FactCountyBusinessPattern table\LKP - DimNaics.Connections[OleDbConnection]"
+                  connectionManagerID="{0F1CCC37-6CC5-43E2-8C89-FD2BCA9DBE41}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[SIVA-PC.USCountyBusinessPatternsDW]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DFT - Load FactCountyBusinessPattern table\LKP - DimNaics.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT - Load FactCountyBusinessPattern table\LKP - DimNaics.Inputs[Lookup Input].Columns[NaicsAK]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="NaicsAK"
+                      lineageId="Package\DFT - Load FactCountyBusinessPattern table\OLE_SRC CountyBusinessPattern table.Outputs[OLE DB Source Output].Columns[NaicsAK]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">NaicsAK</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT - Load FactCountyBusinessPattern table\LKP - DimNaics.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  errorRowDisposition="IgnoreFailure"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\DFT - Load FactCountyBusinessPattern table\LKP - DimNaics.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT - Load FactCountyBusinessPattern table\LKP - DimNaics.Outputs[Lookup Match Output].Columns[NaicsSK]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\DFT - Load FactCountyBusinessPattern table\LKP - DimNaics.Outputs[Lookup Match Output].Columns[NaicsSK]"
+                      name="NaicsSK"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">NaicsSK</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT - Load FactCountyBusinessPattern table\LKP - DimNaics.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\DFT - Load FactCountyBusinessPattern table\LKP - DimNaics.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT - Load FactCountyBusinessPattern table\LKP - DimNaics.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\DFT - Load FactCountyBusinessPattern table\LKP - DimNaics.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT - Load FactCountyBusinessPattern table\LKP - DimNaics.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT - Load FactCountyBusinessPattern table\LKP - DimNaics.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT - Load FactCountyBusinessPattern table\LKP - DimNaics.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT - Load FactCountyBusinessPattern table\LKP - DimNaics.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT - Load FactCountyBusinessPattern table\LKP - DimYear"
+              componentClassID="{671046B0-AA63-4C9F-90E4-C06E0B710CE3}"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="LKP - DimYear"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from [dbo].[DimYear]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (select * from [dbo].[DimYear]) [refTable]
+where [refTable].[YearAK] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="YearSK" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="YearAK" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\DFT - Load FactCountyBusinessPattern table\OLE_SRC CountyBusinessPattern table.Outputs[OLE DB Source Output].Columns[YearAK]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT - Load FactCountyBusinessPattern table\LKP - DimYear.Connections[OleDbConnection]"
+                  connectionManagerID="{0F1CCC37-6CC5-43E2-8C89-FD2BCA9DBE41}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[SIVA-PC.USCountyBusinessPatternsDW]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DFT - Load FactCountyBusinessPattern table\LKP - DimYear.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT - Load FactCountyBusinessPattern table\LKP - DimYear.Inputs[Lookup Input].Columns[YearAK]"
+                      cachedDataType="i4"
+                      cachedName="YearAK"
+                      lineageId="Package\DFT - Load FactCountyBusinessPattern table\OLE_SRC CountyBusinessPattern table.Outputs[OLE DB Source Output].Columns[YearAK]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">YearAK</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT - Load FactCountyBusinessPattern table\LKP - DimYear.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  errorRowDisposition="IgnoreFailure"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\DFT - Load FactCountyBusinessPattern table\LKP - DimYear.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT - Load FactCountyBusinessPattern table\LKP - DimYear.Outputs[Lookup Match Output].Columns[YearSK]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\DFT - Load FactCountyBusinessPattern table\LKP - DimYear.Outputs[Lookup Match Output].Columns[YearSK]"
+                      name="YearSK"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">YearSK</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT - Load FactCountyBusinessPattern table\LKP - DimYear.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\DFT - Load FactCountyBusinessPattern table\LKP - DimYear.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT - Load FactCountyBusinessPattern table\LKP - DimYear.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\DFT - Load FactCountyBusinessPattern table\LKP - DimYear.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT - Load FactCountyBusinessPattern table\LKP - DimYear.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT - Load FactCountyBusinessPattern table\LKP - DimYear.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT - Load FactCountyBusinessPattern table\LKP - DimYear.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT - Load FactCountyBusinessPattern table\LKP - DimYear.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT - Load FactCountyBusinessPattern table\OLE_DST FactCountyBusinessPattern"
+              componentClassID="{4ADA7EAA-136C-4215-8098-D7A7C27FC0D1}"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE_DST FactCountyBusinessPattern"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[FactCountyBusinessPattern]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT - Load FactCountyBusinessPattern table\OLE_DST FactCountyBusinessPattern.Connections[OleDbConnection]"
+                  connectionManagerID="{0F1CCC37-6CC5-43E2-8C89-FD2BCA9DBE41}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[SIVA-PC.USCountyBusinessPatternsDW]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DFT - Load FactCountyBusinessPattern table\OLE_DST FactCountyBusinessPattern.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT - Load FactCountyBusinessPattern table\OLE_DST FactCountyBusinessPattern.Inputs[OLE DB Destination Input].Columns[TotalMidMarchEmployees]"
+                      cachedDataType="i4"
+                      cachedName="TotalMidMarchEmployees"
+                      externalMetadataColumnId="Package\DFT - Load FactCountyBusinessPattern table\OLE_DST FactCountyBusinessPattern.Inputs[OLE DB Destination Input].ExternalColumns[TotalMidMarchEmployees]"
+                      lineageId="Package\DFT - Load FactCountyBusinessPattern table\OLE_SRC CountyBusinessPattern table.Outputs[OLE DB Source Output].Columns[TotalMidMarchEmployees]" />
+                    <inputColumn
+                      refId="Package\DFT - Load FactCountyBusinessPattern table\OLE_DST FactCountyBusinessPattern.Inputs[OLE DB Destination Input].Columns[Q1PayRoll]"
+                      cachedDataType="i8"
+                      cachedName="Q1PayRoll"
+                      externalMetadataColumnId="Package\DFT - Load FactCountyBusinessPattern table\OLE_DST FactCountyBusinessPattern.Inputs[OLE DB Destination Input].ExternalColumns[Q1PayRoll]"
+                      lineageId="Package\DFT - Load FactCountyBusinessPattern table\OLE_SRC CountyBusinessPattern table.Outputs[OLE DB Source Output].Columns[Q1PayRoll]" />
+                    <inputColumn
+                      refId="Package\DFT - Load FactCountyBusinessPattern table\OLE_DST FactCountyBusinessPattern.Inputs[OLE DB Destination Input].Columns[AnnualPayRoll]"
+                      cachedDataType="i8"
+                      cachedName="AnnualPayRoll"
+                      externalMetadataColumnId="Package\DFT - Load FactCountyBusinessPattern table\OLE_DST FactCountyBusinessPattern.Inputs[OLE DB Destination Input].ExternalColumns[AnnualPayRoll]"
+                      lineageId="Package\DFT - Load FactCountyBusinessPattern table\OLE_SRC CountyBusinessPattern table.Outputs[OLE DB Source Output].Columns[AnnualPayRoll]" />
+                    <inputColumn
+                      refId="Package\DFT - Load FactCountyBusinessPattern table\OLE_DST FactCountyBusinessPattern.Inputs[OLE DB Destination Input].Columns[TotalEstablishments]"
+                      cachedDataType="i8"
+                      cachedName="TotalEstablishments"
+                      externalMetadataColumnId="Package\DFT - Load FactCountyBusinessPattern table\OLE_DST FactCountyBusinessPattern.Inputs[OLE DB Destination Input].ExternalColumns[TotalEstablishments]"
+                      lineageId="Package\DFT - Load FactCountyBusinessPattern table\OLE_SRC CountyBusinessPattern table.Outputs[OLE DB Source Output].Columns[TotalEstablishments]" />
+                    <inputColumn
+                      refId="Package\DFT - Load FactCountyBusinessPattern table\OLE_DST FactCountyBusinessPattern.Inputs[OLE DB Destination Input].Columns[NumberEST_1To4]"
+                      cachedDataType="i4"
+                      cachedName="NumberEST_1To4"
+                      externalMetadataColumnId="Package\DFT - Load FactCountyBusinessPattern table\OLE_DST FactCountyBusinessPattern.Inputs[OLE DB Destination Input].ExternalColumns[NumberEST_1To4]"
+                      lineageId="Package\DFT - Load FactCountyBusinessPattern table\OLE_SRC CountyBusinessPattern table.Outputs[OLE DB Source Output].Columns[NumberEST_1To4]" />
+                    <inputColumn
+                      refId="Package\DFT - Load FactCountyBusinessPattern table\OLE_DST FactCountyBusinessPattern.Inputs[OLE DB Destination Input].Columns[NumberEST_5To9]"
+                      cachedDataType="i4"
+                      cachedName="NumberEST_5To9"
+                      externalMetadataColumnId="Package\DFT - Load FactCountyBusinessPattern table\OLE_DST FactCountyBusinessPattern.Inputs[OLE DB Destination Input].ExternalColumns[NumberEST_5To9]"
+                      lineageId="Package\DFT - Load FactCountyBusinessPattern table\OLE_SRC CountyBusinessPattern table.Outputs[OLE DB Source Output].Columns[NumberEST_5To9]" />
+                    <inputColumn
+                      refId="Package\DFT - Load FactCountyBusinessPattern table\OLE_DST FactCountyBusinessPattern.Inputs[OLE DB Destination Input].Columns[NumberEST_10To19]"
+                      cachedDataType="i4"
+                      cachedName="NumberEST_10To19"
+                      externalMetadataColumnId="Package\DFT - Load FactCountyBusinessPattern table\OLE_DST FactCountyBusinessPattern.Inputs[OLE DB Destination Input].ExternalColumns[NumberEST_10To19]"
+                      lineageId="Package\DFT - Load FactCountyBusinessPattern table\OLE_SRC CountyBusinessPattern table.Outputs[OLE DB Source Output].Columns[NumberEST_10To19]" />
+                    <inputColumn
+                      refId="Package\DFT - Load FactCountyBusinessPattern table\OLE_DST FactCountyBusinessPattern.Inputs[OLE DB Destination Input].Columns[NumberEST_20To49]"
+                      cachedDataType="i4"
+                      cachedName="NumberEST_20To49"
+                      externalMetadataColumnId="Package\DFT - Load FactCountyBusinessPattern table\OLE_DST FactCountyBusinessPattern.Inputs[OLE DB Destination Input].ExternalColumns[NumberEST_20To49]"
+                      lineageId="Package\DFT - Load FactCountyBusinessPattern table\OLE_SRC CountyBusinessPattern table.Outputs[OLE DB Source Output].Columns[NumberEST_20To49]" />
+                    <inputColumn
+                      refId="Package\DFT - Load FactCountyBusinessPattern table\OLE_DST FactCountyBusinessPattern.Inputs[OLE DB Destination Input].Columns[NumberEST_50To99]"
+                      cachedDataType="i4"
+                      cachedName="NumberEST_50To99"
+                      externalMetadataColumnId="Package\DFT - Load FactCountyBusinessPattern table\OLE_DST FactCountyBusinessPattern.Inputs[OLE DB Destination Input].ExternalColumns[NumberEST_50To99]"
+                      lineageId="Package\DFT - Load FactCountyBusinessPattern table\OLE_SRC CountyBusinessPattern table.Outputs[OLE DB Source Output].Columns[NumberEST_50To99]" />
+                    <inputColumn
+                      refId="Package\DFT - Load FactCountyBusinessPattern table\OLE_DST FactCountyBusinessPattern.Inputs[OLE DB Destination Input].Columns[NumberEST_100To249]"
+                      cachedDataType="i4"
+                      cachedName="NumberEST_100To249"
+                      externalMetadataColumnId="Package\DFT - Load FactCountyBusinessPattern table\OLE_DST FactCountyBusinessPattern.Inputs[OLE DB Destination Input].ExternalColumns[NumberEST_100To249]"
+                      lineageId="Package\DFT - Load FactCountyBusinessPattern table\OLE_SRC CountyBusinessPattern table.Outputs[OLE DB Source Output].Columns[NumberEST_100To249]" />
+                    <inputColumn
+                      refId="Package\DFT - Load FactCountyBusinessPattern table\OLE_DST FactCountyBusinessPattern.Inputs[OLE DB Destination Input].Columns[NumberEST_250To499]"
+                      cachedDataType="i4"
+                      cachedName="NumberEST_250To499"
+                      externalMetadataColumnId="Package\DFT - Load FactCountyBusinessPattern table\OLE_DST FactCountyBusinessPattern.Inputs[OLE DB Destination Input].ExternalColumns[NumberEST_250To499]"
+                      lineageId="Package\DFT - Load FactCountyBusinessPattern table\OLE_SRC CountyBusinessPattern table.Outputs[OLE DB Source Output].Columns[NumberEST_250To499]" />
+                    <inputColumn
+                      refId="Package\DFT - Load FactCountyBusinessPattern table\OLE_DST FactCountyBusinessPattern.Inputs[OLE DB Destination Input].Columns[NumberEST_500To999]"
+                      cachedDataType="i4"
+                      cachedName="NumberEST_500To999"
+                      externalMetadataColumnId="Package\DFT - Load FactCountyBusinessPattern table\OLE_DST FactCountyBusinessPattern.Inputs[OLE DB Destination Input].ExternalColumns[NumberEST_500To999]"
+                      lineageId="Package\DFT - Load FactCountyBusinessPattern table\OLE_SRC CountyBusinessPattern table.Outputs[OLE DB Source Output].Columns[NumberEST_500To999]" />
+                    <inputColumn
+                      refId="Package\DFT - Load FactCountyBusinessPattern table\OLE_DST FactCountyBusinessPattern.Inputs[OLE DB Destination Input].Columns[NumberEST_1000_OR_More]"
+                      cachedDataType="i4"
+                      cachedName="NumberEST_1000_OR_More"
+                      externalMetadataColumnId="Package\DFT - Load FactCountyBusinessPattern table\OLE_DST FactCountyBusinessPattern.Inputs[OLE DB Destination Input].ExternalColumns[NumberEST_1000_OR_More]"
+                      lineageId="Package\DFT - Load FactCountyBusinessPattern table\OLE_SRC CountyBusinessPattern table.Outputs[OLE DB Source Output].Columns[NumberEST_1000_OR_More]" />
+                    <inputColumn
+                      refId="Package\DFT - Load FactCountyBusinessPattern table\OLE_DST FactCountyBusinessPattern.Inputs[OLE DB Destination Input].Columns[NumberEST_1000To1499]"
+                      cachedDataType="i4"
+                      cachedName="NumberEST_1000To1499"
+                      externalMetadataColumnId="Package\DFT - Load FactCountyBusinessPattern table\OLE_DST FactCountyBusinessPattern.Inputs[OLE DB Destination Input].ExternalColumns[NumberEST_1000To1499]"
+                      lineageId="Package\DFT - Load FactCountyBusinessPattern table\OLE_SRC CountyBusinessPattern table.Outputs[OLE DB Source Output].Columns[NumberEST_1000To1499]" />
+                    <inputColumn
+                      refId="Package\DFT - Load FactCountyBusinessPattern table\OLE_DST FactCountyBusinessPattern.Inputs[OLE DB Destination Input].Columns[NumberEST_1500To2499]"
+                      cachedDataType="i4"
+                      cachedName="NumberEST_1500To2499"
+                      externalMetadataColumnId="Package\DFT - Load FactCountyBusinessPattern table\OLE_DST FactCountyBusinessPattern.Inputs[OLE DB Destination Input].ExternalColumns[NumberEST_1500To2499]"
+                      lineageId="Package\DFT - Load FactCountyBusinessPattern table\OLE_SRC CountyBusinessPattern table.Outputs[OLE DB Source Output].Columns[NumberEST_1500To2499]" />
+                    <inputColumn
+                      refId="Package\DFT - Load FactCountyBusinessPattern table\OLE_DST FactCountyBusinessPattern.Inputs[OLE DB Destination Input].Columns[NumberEST_2500To4999]"
+                      cachedDataType="i4"
+                      cachedName="NumberEST_2500To4999"
+                      externalMetadataColumnId="Package\DFT - Load FactCountyBusinessPattern table\OLE_DST FactCountyBusinessPattern.Inputs[OLE DB Destination Input].ExternalColumns[NumberEST_2500To4999]"
+                      lineageId="Package\DFT - Load FactCountyBusinessPattern table\OLE_SRC CountyBusinessPattern table.Outputs[OLE DB Source Output].Columns[NumberEST_2500To4999]" />
+                    <inputColumn
+                      refId="Package\DFT - Load FactCountyBusinessPattern table\OLE_DST FactCountyBusinessPattern.Inputs[OLE DB Destination Input].Columns[NumberEST_5000_OR_More]"
+                      cachedDataType="i4"
+                      cachedName="NumberEST_5000_OR_More"
+                      externalMetadataColumnId="Package\DFT - Load FactCountyBusinessPattern table\OLE_DST FactCountyBusinessPattern.Inputs[OLE DB Destination Input].ExternalColumns[NumberEST_5000_OR_More]"
+                      lineageId="Package\DFT - Load FactCountyBusinessPattern table\OLE_SRC CountyBusinessPattern table.Outputs[OLE DB Source Output].Columns[NumberEST_5000_OR_More]" />
+                    <inputColumn
+                      refId="Package\DFT - Load FactCountyBusinessPattern table\OLE_DST FactCountyBusinessPattern.Inputs[OLE DB Destination Input].Columns[CountySK]"
+                      cachedDataType="i4"
+                      cachedName="CountySK"
+                      externalMetadataColumnId="Package\DFT - Load FactCountyBusinessPattern table\OLE_DST FactCountyBusinessPattern.Inputs[OLE DB Destination Input].ExternalColumns[CountySK]"
+                      lineageId="Package\DFT - Load FactCountyBusinessPattern table\LKP - DimCounty.Outputs[Lookup Match Output].Columns[CountySK]" />
+                    <inputColumn
+                      refId="Package\DFT - Load FactCountyBusinessPattern table\OLE_DST FactCountyBusinessPattern.Inputs[OLE DB Destination Input].Columns[NaicsSK]"
+                      cachedDataType="i4"
+                      cachedName="NaicsSK"
+                      externalMetadataColumnId="Package\DFT - Load FactCountyBusinessPattern table\OLE_DST FactCountyBusinessPattern.Inputs[OLE DB Destination Input].ExternalColumns[NaicsSK]"
+                      lineageId="Package\DFT - Load FactCountyBusinessPattern table\LKP - DimNaics.Outputs[Lookup Match Output].Columns[NaicsSK]" />
+                    <inputColumn
+                      refId="Package\DFT - Load FactCountyBusinessPattern table\OLE_DST FactCountyBusinessPattern.Inputs[OLE DB Destination Input].Columns[YearSK]"
+                      cachedDataType="i4"
+                      cachedName="YearSK"
+                      externalMetadataColumnId="Package\DFT - Load FactCountyBusinessPattern table\OLE_DST FactCountyBusinessPattern.Inputs[OLE DB Destination Input].ExternalColumns[YearSK]"
+                      lineageId="Package\DFT - Load FactCountyBusinessPattern table\LKP - DimYear.Outputs[Lookup Match Output].Columns[YearSK]" />
+                    <inputColumn
+                      refId="Package\DFT - Load FactCountyBusinessPattern table\OLE_DST FactCountyBusinessPattern.Inputs[OLE DB Destination Input].Columns[CountyBusinessPatternAK]"
+                      cachedDataType="i4"
+                      cachedName="CountyBusinessPatternAK"
+                      externalMetadataColumnId="Package\DFT - Load FactCountyBusinessPattern table\OLE_DST FactCountyBusinessPattern.Inputs[OLE DB Destination Input].ExternalColumns[CountyBusinessPatternAK]"
+                      lineageId="Package\DFT - Load FactCountyBusinessPattern table\OLE_SRC CountyBusinessPattern table.Outputs[OLE DB Source Output].Columns[CountyBusinessPatternAK]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DFT - Load FactCountyBusinessPattern table\OLE_DST FactCountyBusinessPattern.Inputs[OLE DB Destination Input].ExternalColumns[NaicsSK]"
+                      dataType="i4"
+                      name="NaicsSK" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Load FactCountyBusinessPattern table\OLE_DST FactCountyBusinessPattern.Inputs[OLE DB Destination Input].ExternalColumns[YearSK]"
+                      dataType="i4"
+                      name="YearSK" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Load FactCountyBusinessPattern table\OLE_DST FactCountyBusinessPattern.Inputs[OLE DB Destination Input].ExternalColumns[CountySK]"
+                      dataType="i4"
+                      name="CountySK" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Load FactCountyBusinessPattern table\OLE_DST FactCountyBusinessPattern.Inputs[OLE DB Destination Input].ExternalColumns[TotalMidMarchEmployees]"
+                      dataType="i4"
+                      name="TotalMidMarchEmployees" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Load FactCountyBusinessPattern table\OLE_DST FactCountyBusinessPattern.Inputs[OLE DB Destination Input].ExternalColumns[Q1PayRoll]"
+                      dataType="i8"
+                      name="Q1PayRoll" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Load FactCountyBusinessPattern table\OLE_DST FactCountyBusinessPattern.Inputs[OLE DB Destination Input].ExternalColumns[AnnualPayRoll]"
+                      dataType="i8"
+                      name="AnnualPayRoll" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Load FactCountyBusinessPattern table\OLE_DST FactCountyBusinessPattern.Inputs[OLE DB Destination Input].ExternalColumns[TotalEstablishments]"
+                      dataType="i8"
+                      name="TotalEstablishments" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Load FactCountyBusinessPattern table\OLE_DST FactCountyBusinessPattern.Inputs[OLE DB Destination Input].ExternalColumns[NumberEST_1To4]"
+                      dataType="i4"
+                      name="NumberEST_1To4" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Load FactCountyBusinessPattern table\OLE_DST FactCountyBusinessPattern.Inputs[OLE DB Destination Input].ExternalColumns[NumberEST_5To9]"
+                      dataType="i4"
+                      name="NumberEST_5To9" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Load FactCountyBusinessPattern table\OLE_DST FactCountyBusinessPattern.Inputs[OLE DB Destination Input].ExternalColumns[NumberEST_10To19]"
+                      dataType="i4"
+                      name="NumberEST_10To19" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Load FactCountyBusinessPattern table\OLE_DST FactCountyBusinessPattern.Inputs[OLE DB Destination Input].ExternalColumns[NumberEST_20To49]"
+                      dataType="i4"
+                      name="NumberEST_20To49" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Load FactCountyBusinessPattern table\OLE_DST FactCountyBusinessPattern.Inputs[OLE DB Destination Input].ExternalColumns[NumberEST_50To99]"
+                      dataType="i4"
+                      name="NumberEST_50To99" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Load FactCountyBusinessPattern table\OLE_DST FactCountyBusinessPattern.Inputs[OLE DB Destination Input].ExternalColumns[NumberEST_100To249]"
+                      dataType="i4"
+                      name="NumberEST_100To249" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Load FactCountyBusinessPattern table\OLE_DST FactCountyBusinessPattern.Inputs[OLE DB Destination Input].ExternalColumns[NumberEST_250To499]"
+                      dataType="i4"
+                      name="NumberEST_250To499" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Load FactCountyBusinessPattern table\OLE_DST FactCountyBusinessPattern.Inputs[OLE DB Destination Input].ExternalColumns[NumberEST_500To999]"
+                      dataType="i4"
+                      name="NumberEST_500To999" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Load FactCountyBusinessPattern table\OLE_DST FactCountyBusinessPattern.Inputs[OLE DB Destination Input].ExternalColumns[NumberEST_1000_OR_More]"
+                      dataType="i4"
+                      name="NumberEST_1000_OR_More" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Load FactCountyBusinessPattern table\OLE_DST FactCountyBusinessPattern.Inputs[OLE DB Destination Input].ExternalColumns[NumberEST_1000To1499]"
+                      dataType="i4"
+                      name="NumberEST_1000To1499" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Load FactCountyBusinessPattern table\OLE_DST FactCountyBusinessPattern.Inputs[OLE DB Destination Input].ExternalColumns[NumberEST_1500To2499]"
+                      dataType="i4"
+                      name="NumberEST_1500To2499" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Load FactCountyBusinessPattern table\OLE_DST FactCountyBusinessPattern.Inputs[OLE DB Destination Input].ExternalColumns[NumberEST_2500To4999]"
+                      dataType="i4"
+                      name="NumberEST_2500To4999" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Load FactCountyBusinessPattern table\OLE_DST FactCountyBusinessPattern.Inputs[OLE DB Destination Input].ExternalColumns[NumberEST_5000_OR_More]"
+                      dataType="i4"
+                      name="NumberEST_5000_OR_More" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Load FactCountyBusinessPattern table\OLE_DST FactCountyBusinessPattern.Inputs[OLE DB Destination Input].ExternalColumns[FactCountyBusinessPatternSK]"
+                      dataType="i4"
+                      name="FactCountyBusinessPatternSK" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Load FactCountyBusinessPattern table\OLE_DST FactCountyBusinessPattern.Inputs[OLE DB Destination Input].ExternalColumns[CountyBusinessPatternAK]"
+                      dataType="i4"
+                      name="CountyBusinessPatternAK" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT - Load FactCountyBusinessPattern table\OLE_DST FactCountyBusinessPattern.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\DFT - Load FactCountyBusinessPattern table\OLE_DST FactCountyBusinessPattern.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT - Load FactCountyBusinessPattern table\OLE_DST FactCountyBusinessPattern.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT - Load FactCountyBusinessPattern table\OLE_DST FactCountyBusinessPattern.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT - Load FactCountyBusinessPattern table\OLE_DST FactCountyBusinessPattern.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT - Load FactCountyBusinessPattern table\OLE_DST FactCountyBusinessPattern.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT - Load FactCountyBusinessPattern table\OLE_SRC CountyBusinessPattern table"
+              componentClassID="{165A526D-D5DE-47FF-96A6-F8274C19826B}"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="OLE_SRC CountyBusinessPattern table"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT 
+     CountyBusinessPatternID AS CountyBusinessPatternAK 
+     , [CountyID] As CountyAK
+      ,[Naics] As NaicsAK
+      ,[Year] As YearAK
+      ,[TotalMidMarchEmployees]
+      ,[Q1PayRoll]
+      ,[AnnualPayRoll]
+      ,[TotalEstablishments]
+      ,[NumberEST_1To4]
+      ,[NumberEST_5To9]
+      ,[NumberEST_10To19]
+      ,[NumberEST_20To49]
+      ,[NumberEST_50To99]
+      ,[NumberEST_100To249]
+      ,[NumberEST_250To499]
+      ,[NumberEST_500To999]
+      ,[NumberEST_1000_OR_More]
+      ,[NumberEST_1000To1499]
+      ,[NumberEST_1500To2499]
+      ,[NumberEST_2500To4999]
+      ,[NumberEST_5000_OR_More]
+     
+  FROM [dbo].[CountyBusinessPattern]
+GO</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT - Load FactCountyBusinessPattern table\OLE_SRC CountyBusinessPattern table.Connections[OleDbConnection]"
+                  connectionManagerID="{B890ECC0-DABE-4543-85BD-B1A0DD58E344}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[SIVA-PC.USCountyBusinessPatternsOLTP]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\DFT - Load FactCountyBusinessPattern table\OLE_SRC CountyBusinessPattern table.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT - Load FactCountyBusinessPattern table\OLE_SRC CountyBusinessPattern table.Outputs[OLE DB Source Output].Columns[CountyAK]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT - Load FactCountyBusinessPattern table\OLE_SRC CountyBusinessPattern table.Outputs[OLE DB Source Output].ExternalColumns[CountyAK]"
+                      length="5"
+                      lineageId="Package\DFT - Load FactCountyBusinessPattern table\OLE_SRC CountyBusinessPattern table.Outputs[OLE DB Source Output].Columns[CountyAK]"
+                      name="CountyAK"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT - Load FactCountyBusinessPattern table\OLE_SRC CountyBusinessPattern table.Outputs[OLE DB Source Output].Columns[NaicsAK]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT - Load FactCountyBusinessPattern table\OLE_SRC CountyBusinessPattern table.Outputs[OLE DB Source Output].ExternalColumns[NaicsAK]"
+                      length="50"
+                      lineageId="Package\DFT - Load FactCountyBusinessPattern table\OLE_SRC CountyBusinessPattern table.Outputs[OLE DB Source Output].Columns[NaicsAK]"
+                      name="NaicsAK"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT - Load FactCountyBusinessPattern table\OLE_SRC CountyBusinessPattern table.Outputs[OLE DB Source Output].Columns[TotalMidMarchEmployees]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT - Load FactCountyBusinessPattern table\OLE_SRC CountyBusinessPattern table.Outputs[OLE DB Source Output].ExternalColumns[TotalMidMarchEmployees]"
+                      lineageId="Package\DFT - Load FactCountyBusinessPattern table\OLE_SRC CountyBusinessPattern table.Outputs[OLE DB Source Output].Columns[TotalMidMarchEmployees]"
+                      name="TotalMidMarchEmployees"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT - Load FactCountyBusinessPattern table\OLE_SRC CountyBusinessPattern table.Outputs[OLE DB Source Output].Columns[Q1PayRoll]"
+                      dataType="i8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT - Load FactCountyBusinessPattern table\OLE_SRC CountyBusinessPattern table.Outputs[OLE DB Source Output].ExternalColumns[Q1PayRoll]"
+                      lineageId="Package\DFT - Load FactCountyBusinessPattern table\OLE_SRC CountyBusinessPattern table.Outputs[OLE DB Source Output].Columns[Q1PayRoll]"
+                      name="Q1PayRoll"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT - Load FactCountyBusinessPattern table\OLE_SRC CountyBusinessPattern table.Outputs[OLE DB Source Output].Columns[AnnualPayRoll]"
+                      dataType="i8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT - Load FactCountyBusinessPattern table\OLE_SRC CountyBusinessPattern table.Outputs[OLE DB Source Output].ExternalColumns[AnnualPayRoll]"
+                      lineageId="Package\DFT - Load FactCountyBusinessPattern table\OLE_SRC CountyBusinessPattern table.Outputs[OLE DB Source Output].Columns[AnnualPayRoll]"
+                      name="AnnualPayRoll"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT - Load FactCountyBusinessPattern table\OLE_SRC CountyBusinessPattern table.Outputs[OLE DB Source Output].Columns[TotalEstablishments]"
+                      dataType="i8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT - Load FactCountyBusinessPattern table\OLE_SRC CountyBusinessPattern table.Outputs[OLE DB Source Output].ExternalColumns[TotalEstablishments]"
+                      lineageId="Package\DFT - Load FactCountyBusinessPattern table\OLE_SRC CountyBusinessPattern table.Outputs[OLE DB Source Output].Columns[TotalEstablishments]"
+                      name="TotalEstablishments"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT - Load FactCountyBusinessPattern table\OLE_SRC CountyBusinessPattern table.Outputs[OLE DB Source Output].Columns[NumberEST_1To4]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT - Load FactCountyBusinessPattern table\OLE_SRC CountyBusinessPattern table.Outputs[OLE DB Source Output].ExternalColumns[NumberEST_1To4]"
+                      lineageId="Package\DFT - Load FactCountyBusinessPattern table\OLE_SRC CountyBusinessPattern table.Outputs[OLE DB Source Output].Columns[NumberEST_1To4]"
+                      name="NumberEST_1To4"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT - Load FactCountyBusinessPattern table\OLE_SRC CountyBusinessPattern table.Outputs[OLE DB Source Output].Columns[NumberEST_5To9]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT - Load FactCountyBusinessPattern table\OLE_SRC CountyBusinessPattern table.Outputs[OLE DB Source Output].ExternalColumns[NumberEST_5To9]"
+                      lineageId="Package\DFT - Load FactCountyBusinessPattern table\OLE_SRC CountyBusinessPattern table.Outputs[OLE DB Source Output].Columns[NumberEST_5To9]"
+                      name="NumberEST_5To9"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT - Load FactCountyBusinessPattern table\OLE_SRC CountyBusinessPattern table.Outputs[OLE DB Source Output].Columns[NumberEST_10To19]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT - Load FactCountyBusinessPattern table\OLE_SRC CountyBusinessPattern table.Outputs[OLE DB Source Output].ExternalColumns[NumberEST_10To19]"
+                      lineageId="Package\DFT - Load FactCountyBusinessPattern table\OLE_SRC CountyBusinessPattern table.Outputs[OLE DB Source Output].Columns[NumberEST_10To19]"
+                      name="NumberEST_10To19"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT - Load FactCountyBusinessPattern table\OLE_SRC CountyBusinessPattern table.Outputs[OLE DB Source Output].Columns[NumberEST_20To49]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT - Load FactCountyBusinessPattern table\OLE_SRC CountyBusinessPattern table.Outputs[OLE DB Source Output].ExternalColumns[NumberEST_20To49]"
+                      lineageId="Package\DFT - Load FactCountyBusinessPattern table\OLE_SRC CountyBusinessPattern table.Outputs[OLE DB Source Output].Columns[NumberEST_20To49]"
+                      name="NumberEST_20To49"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT - Load FactCountyBusinessPattern table\OLE_SRC CountyBusinessPattern table.Outputs[OLE DB Source Output].Columns[NumberEST_50To99]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT - Load FactCountyBusinessPattern table\OLE_SRC CountyBusinessPattern table.Outputs[OLE DB Source Output].ExternalColumns[NumberEST_50To99]"
+                      lineageId="Package\DFT - Load FactCountyBusinessPattern table\OLE_SRC CountyBusinessPattern table.Outputs[OLE DB Source Output].Columns[NumberEST_50To99]"
+                      name="NumberEST_50To99"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT - Load FactCountyBusinessPattern table\OLE_SRC CountyBusinessPattern table.Outputs[OLE DB Source Output].Columns[NumberEST_100To249]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT - Load FactCountyBusinessPattern table\OLE_SRC CountyBusinessPattern table.Outputs[OLE DB Source Output].ExternalColumns[NumberEST_100To249]"
+                      lineageId="Package\DFT - Load FactCountyBusinessPattern table\OLE_SRC CountyBusinessPattern table.Outputs[OLE DB Source Output].Columns[NumberEST_100To249]"
+                      name="NumberEST_100To249"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT - Load FactCountyBusinessPattern table\OLE_SRC CountyBusinessPattern table.Outputs[OLE DB Source Output].Columns[NumberEST_250To499]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT - Load FactCountyBusinessPattern table\OLE_SRC CountyBusinessPattern table.Outputs[OLE DB Source Output].ExternalColumns[NumberEST_250To499]"
+                      lineageId="Package\DFT - Load FactCountyBusinessPattern table\OLE_SRC CountyBusinessPattern table.Outputs[OLE DB Source Output].Columns[NumberEST_250To499]"
+                      name="NumberEST_250To499"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT - Load FactCountyBusinessPattern table\OLE_SRC CountyBusinessPattern table.Outputs[OLE DB Source Output].Columns[NumberEST_500To999]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT - Load FactCountyBusinessPattern table\OLE_SRC CountyBusinessPattern table.Outputs[OLE DB Source Output].ExternalColumns[NumberEST_500To999]"
+                      lineageId="Package\DFT - Load FactCountyBusinessPattern table\OLE_SRC CountyBusinessPattern table.Outputs[OLE DB Source Output].Columns[NumberEST_500To999]"
+                      name="NumberEST_500To999"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT - Load FactCountyBusinessPattern table\OLE_SRC CountyBusinessPattern table.Outputs[OLE DB Source Output].Columns[NumberEST_1000_OR_More]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT - Load FactCountyBusinessPattern table\OLE_SRC CountyBusinessPattern table.Outputs[OLE DB Source Output].ExternalColumns[NumberEST_1000_OR_More]"
+                      lineageId="Package\DFT - Load FactCountyBusinessPattern table\OLE_SRC CountyBusinessPattern table.Outputs[OLE DB Source Output].Columns[NumberEST_1000_OR_More]"
+                      name="NumberEST_1000_OR_More"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT - Load FactCountyBusinessPattern table\OLE_SRC CountyBusinessPattern table.Outputs[OLE DB Source Output].Columns[NumberEST_1000To1499]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT - Load FactCountyBusinessPattern table\OLE_SRC CountyBusinessPattern table.Outputs[OLE DB Source Output].ExternalColumns[NumberEST_1000To1499]"
+                      lineageId="Package\DFT - Load FactCountyBusinessPattern table\OLE_SRC CountyBusinessPattern table.Outputs[OLE DB Source Output].Columns[NumberEST_1000To1499]"
+                      name="NumberEST_1000To1499"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT - Load FactCountyBusinessPattern table\OLE_SRC CountyBusinessPattern table.Outputs[OLE DB Source Output].Columns[NumberEST_1500To2499]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT - Load FactCountyBusinessPattern table\OLE_SRC CountyBusinessPattern table.Outputs[OLE DB Source Output].ExternalColumns[NumberEST_1500To2499]"
+                      lineageId="Package\DFT - Load FactCountyBusinessPattern table\OLE_SRC CountyBusinessPattern table.Outputs[OLE DB Source Output].Columns[NumberEST_1500To2499]"
+                      name="NumberEST_1500To2499"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT - Load FactCountyBusinessPattern table\OLE_SRC CountyBusinessPattern table.Outputs[OLE DB Source Output].Columns[NumberEST_2500To4999]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT - Load FactCountyBusinessPattern table\OLE_SRC CountyBusinessPattern table.Outputs[OLE DB Source Output].ExternalColumns[NumberEST_2500To4999]"
+                      lineageId="Package\DFT - Load FactCountyBusinessPattern table\OLE_SRC CountyBusinessPattern table.Outputs[OLE DB Source Output].Columns[NumberEST_2500To4999]"
+                      name="NumberEST_2500To4999"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT - Load FactCountyBusinessPattern table\OLE_SRC CountyBusinessPattern table.Outputs[OLE DB Source Output].Columns[NumberEST_5000_OR_More]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT - Load FactCountyBusinessPattern table\OLE_SRC CountyBusinessPattern table.Outputs[OLE DB Source Output].ExternalColumns[NumberEST_5000_OR_More]"
+                      lineageId="Package\DFT - Load FactCountyBusinessPattern table\OLE_SRC CountyBusinessPattern table.Outputs[OLE DB Source Output].Columns[NumberEST_5000_OR_More]"
+                      name="NumberEST_5000_OR_More"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT - Load FactCountyBusinessPattern table\OLE_SRC CountyBusinessPattern table.Outputs[OLE DB Source Output].Columns[YearAK]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT - Load FactCountyBusinessPattern table\OLE_SRC CountyBusinessPattern table.Outputs[OLE DB Source Output].ExternalColumns[YearAK]"
+                      lineageId="Package\DFT - Load FactCountyBusinessPattern table\OLE_SRC CountyBusinessPattern table.Outputs[OLE DB Source Output].Columns[YearAK]"
+                      name="YearAK"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT - Load FactCountyBusinessPattern table\OLE_SRC CountyBusinessPattern table.Outputs[OLE DB Source Output].Columns[CountyBusinessPatternAK]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT - Load FactCountyBusinessPattern table\OLE_SRC CountyBusinessPattern table.Outputs[OLE DB Source Output].ExternalColumns[CountyBusinessPatternAK]"
+                      lineageId="Package\DFT - Load FactCountyBusinessPattern table\OLE_SRC CountyBusinessPattern table.Outputs[OLE DB Source Output].Columns[CountyBusinessPatternAK]"
+                      name="CountyBusinessPatternAK"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DFT - Load FactCountyBusinessPattern table\OLE_SRC CountyBusinessPattern table.Outputs[OLE DB Source Output].ExternalColumns[CountyAK]"
+                      codePage="1252"
+                      dataType="str"
+                      length="5"
+                      name="CountyAK" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Load FactCountyBusinessPattern table\OLE_SRC CountyBusinessPattern table.Outputs[OLE DB Source Output].ExternalColumns[NaicsAK]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="NaicsAK" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Load FactCountyBusinessPattern table\OLE_SRC CountyBusinessPattern table.Outputs[OLE DB Source Output].ExternalColumns[TotalMidMarchEmployees]"
+                      dataType="i4"
+                      name="TotalMidMarchEmployees" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Load FactCountyBusinessPattern table\OLE_SRC CountyBusinessPattern table.Outputs[OLE DB Source Output].ExternalColumns[Q1PayRoll]"
+                      dataType="i8"
+                      name="Q1PayRoll" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Load FactCountyBusinessPattern table\OLE_SRC CountyBusinessPattern table.Outputs[OLE DB Source Output].ExternalColumns[AnnualPayRoll]"
+                      dataType="i8"
+                      name="AnnualPayRoll" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Load FactCountyBusinessPattern table\OLE_SRC CountyBusinessPattern table.Outputs[OLE DB Source Output].ExternalColumns[TotalEstablishments]"
+                      dataType="i8"
+                      name="TotalEstablishments" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Load FactCountyBusinessPattern table\OLE_SRC CountyBusinessPattern table.Outputs[OLE DB Source Output].ExternalColumns[NumberEST_1To4]"
+                      dataType="i4"
+                      name="NumberEST_1To4" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Load FactCountyBusinessPattern table\OLE_SRC CountyBusinessPattern table.Outputs[OLE DB Source Output].ExternalColumns[NumberEST_5To9]"
+                      dataType="i4"
+                      name="NumberEST_5To9" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Load FactCountyBusinessPattern table\OLE_SRC CountyBusinessPattern table.Outputs[OLE DB Source Output].ExternalColumns[NumberEST_10To19]"
+                      dataType="i4"
+                      name="NumberEST_10To19" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Load FactCountyBusinessPattern table\OLE_SRC CountyBusinessPattern table.Outputs[OLE DB Source Output].ExternalColumns[NumberEST_20To49]"
+                      dataType="i4"
+                      name="NumberEST_20To49" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Load FactCountyBusinessPattern table\OLE_SRC CountyBusinessPattern table.Outputs[OLE DB Source Output].ExternalColumns[NumberEST_50To99]"
+                      dataType="i4"
+                      name="NumberEST_50To99" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Load FactCountyBusinessPattern table\OLE_SRC CountyBusinessPattern table.Outputs[OLE DB Source Output].ExternalColumns[NumberEST_100To249]"
+                      dataType="i4"
+                      name="NumberEST_100To249" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Load FactCountyBusinessPattern table\OLE_SRC CountyBusinessPattern table.Outputs[OLE DB Source Output].ExternalColumns[NumberEST_250To499]"
+                      dataType="i4"
+                      name="NumberEST_250To499" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Load FactCountyBusinessPattern table\OLE_SRC CountyBusinessPattern table.Outputs[OLE DB Source Output].ExternalColumns[NumberEST_500To999]"
+                      dataType="i4"
+                      name="NumberEST_500To999" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Load FactCountyBusinessPattern table\OLE_SRC CountyBusinessPattern table.Outputs[OLE DB Source Output].ExternalColumns[NumberEST_1000_OR_More]"
+                      dataType="i4"
+                      name="NumberEST_1000_OR_More" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Load FactCountyBusinessPattern table\OLE_SRC CountyBusinessPattern table.Outputs[OLE DB Source Output].ExternalColumns[NumberEST_1000To1499]"
+                      dataType="i4"
+                      name="NumberEST_1000To1499" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Load FactCountyBusinessPattern table\OLE_SRC CountyBusinessPattern table.Outputs[OLE DB Source Output].ExternalColumns[NumberEST_1500To2499]"
+                      dataType="i4"
+                      name="NumberEST_1500To2499" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Load FactCountyBusinessPattern table\OLE_SRC CountyBusinessPattern table.Outputs[OLE DB Source Output].ExternalColumns[NumberEST_2500To4999]"
+                      dataType="i4"
+                      name="NumberEST_2500To4999" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Load FactCountyBusinessPattern table\OLE_SRC CountyBusinessPattern table.Outputs[OLE DB Source Output].ExternalColumns[NumberEST_5000_OR_More]"
+                      dataType="i4"
+                      name="NumberEST_5000_OR_More" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Load FactCountyBusinessPattern table\OLE_SRC CountyBusinessPattern table.Outputs[OLE DB Source Output].ExternalColumns[YearAK]"
+                      dataType="i4"
+                      name="YearAK" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Load FactCountyBusinessPattern table\OLE_SRC CountyBusinessPattern table.Outputs[OLE DB Source Output].ExternalColumns[CountyBusinessPatternAK]"
+                      dataType="i4"
+                      name="CountyBusinessPatternAK" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\DFT - Load FactCountyBusinessPattern table\OLE_SRC CountyBusinessPattern table.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT - Load FactCountyBusinessPattern table\OLE_SRC CountyBusinessPattern table.Outputs[OLE DB Source Error Output].Columns[CountyBusinessPatternAK]"
+                      dataType="i4"
+                      lineageId="Package\DFT - Load FactCountyBusinessPattern table\OLE_SRC CountyBusinessPattern table.Outputs[OLE DB Source Error Output].Columns[CountyBusinessPatternAK]"
+                      name="CountyBusinessPatternAK" />
+                    <outputColumn
+                      refId="Package\DFT - Load FactCountyBusinessPattern table\OLE_SRC CountyBusinessPattern table.Outputs[OLE DB Source Error Output].Columns[CountyAK]"
+                      codePage="1252"
+                      dataType="str"
+                      length="5"
+                      lineageId="Package\DFT - Load FactCountyBusinessPattern table\OLE_SRC CountyBusinessPattern table.Outputs[OLE DB Source Error Output].Columns[CountyAK]"
+                      name="CountyAK" />
+                    <outputColumn
+                      refId="Package\DFT - Load FactCountyBusinessPattern table\OLE_SRC CountyBusinessPattern table.Outputs[OLE DB Source Error Output].Columns[NaicsAK]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\DFT - Load FactCountyBusinessPattern table\OLE_SRC CountyBusinessPattern table.Outputs[OLE DB Source Error Output].Columns[NaicsAK]"
+                      name="NaicsAK" />
+                    <outputColumn
+                      refId="Package\DFT - Load FactCountyBusinessPattern table\OLE_SRC CountyBusinessPattern table.Outputs[OLE DB Source Error Output].Columns[TotalMidMarchEmployees]"
+                      dataType="i4"
+                      lineageId="Package\DFT - Load FactCountyBusinessPattern table\OLE_SRC CountyBusinessPattern table.Outputs[OLE DB Source Error Output].Columns[TotalMidMarchEmployees]"
+                      name="TotalMidMarchEmployees" />
+                    <outputColumn
+                      refId="Package\DFT - Load FactCountyBusinessPattern table\OLE_SRC CountyBusinessPattern table.Outputs[OLE DB Source Error Output].Columns[Q1PayRoll]"
+                      dataType="i8"
+                      lineageId="Package\DFT - Load FactCountyBusinessPattern table\OLE_SRC CountyBusinessPattern table.Outputs[OLE DB Source Error Output].Columns[Q1PayRoll]"
+                      name="Q1PayRoll" />
+                    <outputColumn
+                      refId="Package\DFT - Load FactCountyBusinessPattern table\OLE_SRC CountyBusinessPattern table.Outputs[OLE DB Source Error Output].Columns[AnnualPayRoll]"
+                      dataType="i8"
+                      lineageId="Package\DFT - Load FactCountyBusinessPattern table\OLE_SRC CountyBusinessPattern table.Outputs[OLE DB Source Error Output].Columns[AnnualPayRoll]"
+                      name="AnnualPayRoll" />
+                    <outputColumn
+                      refId="Package\DFT - Load FactCountyBusinessPattern table\OLE_SRC CountyBusinessPattern table.Outputs[OLE DB Source Error Output].Columns[TotalEstablishments]"
+                      dataType="i8"
+                      lineageId="Package\DFT - Load FactCountyBusinessPattern table\OLE_SRC CountyBusinessPattern table.Outputs[OLE DB Source Error Output].Columns[TotalEstablishments]"
+                      name="TotalEstablishments" />
+                    <outputColumn
+                      refId="Package\DFT - Load FactCountyBusinessPattern table\OLE_SRC CountyBusinessPattern table.Outputs[OLE DB Source Error Output].Columns[NumberEST_1To4]"
+                      dataType="i4"
+                      lineageId="Package\DFT - Load FactCountyBusinessPattern table\OLE_SRC CountyBusinessPattern table.Outputs[OLE DB Source Error Output].Columns[NumberEST_1To4]"
+                      name="NumberEST_1To4" />
+                    <outputColumn
+                      refId="Package\DFT - Load FactCountyBusinessPattern table\OLE_SRC CountyBusinessPattern table.Outputs[OLE DB Source Error Output].Columns[NumberEST_5To9]"
+                      dataType="i4"
+                      lineageId="Package\DFT - Load FactCountyBusinessPattern table\OLE_SRC CountyBusinessPattern table.Outputs[OLE DB Source Error Output].Columns[NumberEST_5To9]"
+                      name="NumberEST_5To9" />
+                    <outputColumn
+                      refId="Package\DFT - Load FactCountyBusinessPattern table\OLE_SRC CountyBusinessPattern table.Outputs[OLE DB Source Error Output].Columns[NumberEST_10To19]"
+                      dataType="i4"
+                      lineageId="Package\DFT - Load FactCountyBusinessPattern table\OLE_SRC CountyBusinessPattern table.Outputs[OLE DB Source Error Output].Columns[NumberEST_10To19]"
+                      name="NumberEST_10To19" />
+                    <outputColumn
+                      refId="Package\DFT - Load FactCountyBusinessPattern table\OLE_SRC CountyBusinessPattern table.Outputs[OLE DB Source Error Output].Columns[NumberEST_20To49]"
+                      dataType="i4"
+                      lineageId="Package\DFT - Load FactCountyBusinessPattern table\OLE_SRC CountyBusinessPattern table.Outputs[OLE DB Source Error Output].Columns[NumberEST_20To49]"
+                      name="NumberEST_20To49" />
+                    <outputColumn
+                      refId="Package\DFT - Load FactCountyBusinessPattern table\OLE_SRC CountyBusinessPattern table.Outputs[OLE DB Source Error Output].Columns[NumberEST_50To99]"
+                      dataType="i4"
+                      lineageId="Package\DFT - Load FactCountyBusinessPattern table\OLE_SRC CountyBusinessPattern table.Outputs[OLE DB Source Error Output].Columns[NumberEST_50To99]"
+                      name="NumberEST_50To99" />
+                    <outputColumn
+                      refId="Package\DFT - Load FactCountyBusinessPattern table\OLE_SRC CountyBusinessPattern table.Outputs[OLE DB Source Error Output].Columns[NumberEST_100To249]"
+                      dataType="i4"
+                      lineageId="Package\DFT - Load FactCountyBusinessPattern table\OLE_SRC CountyBusinessPattern table.Outputs[OLE DB Source Error Output].Columns[NumberEST_100To249]"
+                      name="NumberEST_100To249" />
+                    <outputColumn
+                      refId="Package\DFT - Load FactCountyBusinessPattern table\OLE_SRC CountyBusinessPattern table.Outputs[OLE DB Source Error Output].Columns[NumberEST_250To499]"
+                      dataType="i4"
+                      lineageId="Package\DFT - Load FactCountyBusinessPattern table\OLE_SRC CountyBusinessPattern table.Outputs[OLE DB Source Error Output].Columns[NumberEST_250To499]"
+                      name="NumberEST_250To499" />
+                    <outputColumn
+                      refId="Package\DFT - Load FactCountyBusinessPattern table\OLE_SRC CountyBusinessPattern table.Outputs[OLE DB Source Error Output].Columns[NumberEST_500To999]"
+                      dataType="i4"
+                      lineageId="Package\DFT - Load FactCountyBusinessPattern table\OLE_SRC CountyBusinessPattern table.Outputs[OLE DB Source Error Output].Columns[NumberEST_500To999]"
+                      name="NumberEST_500To999" />
+                    <outputColumn
+                      refId="Package\DFT - Load FactCountyBusinessPattern table\OLE_SRC CountyBusinessPattern table.Outputs[OLE DB Source Error Output].Columns[NumberEST_1000_OR_More]"
+                      dataType="i4"
+                      lineageId="Package\DFT - Load FactCountyBusinessPattern table\OLE_SRC CountyBusinessPattern table.Outputs[OLE DB Source Error Output].Columns[NumberEST_1000_OR_More]"
+                      name="NumberEST_1000_OR_More" />
+                    <outputColumn
+                      refId="Package\DFT - Load FactCountyBusinessPattern table\OLE_SRC CountyBusinessPattern table.Outputs[OLE DB Source Error Output].Columns[NumberEST_1000To1499]"
+                      dataType="i4"
+                      lineageId="Package\DFT - Load FactCountyBusinessPattern table\OLE_SRC CountyBusinessPattern table.Outputs[OLE DB Source Error Output].Columns[NumberEST_1000To1499]"
+                      name="NumberEST_1000To1499" />
+                    <outputColumn
+                      refId="Package\DFT - Load FactCountyBusinessPattern table\OLE_SRC CountyBusinessPattern table.Outputs[OLE DB Source Error Output].Columns[NumberEST_1500To2499]"
+                      dataType="i4"
+                      lineageId="Package\DFT - Load FactCountyBusinessPattern table\OLE_SRC CountyBusinessPattern table.Outputs[OLE DB Source Error Output].Columns[NumberEST_1500To2499]"
+                      name="NumberEST_1500To2499" />
+                    <outputColumn
+                      refId="Package\DFT - Load FactCountyBusinessPattern table\OLE_SRC CountyBusinessPattern table.Outputs[OLE DB Source Error Output].Columns[NumberEST_2500To4999]"
+                      dataType="i4"
+                      lineageId="Package\DFT - Load FactCountyBusinessPattern table\OLE_SRC CountyBusinessPattern table.Outputs[OLE DB Source Error Output].Columns[NumberEST_2500To4999]"
+                      name="NumberEST_2500To4999" />
+                    <outputColumn
+                      refId="Package\DFT - Load FactCountyBusinessPattern table\OLE_SRC CountyBusinessPattern table.Outputs[OLE DB Source Error Output].Columns[NumberEST_5000_OR_More]"
+                      dataType="i4"
+                      lineageId="Package\DFT - Load FactCountyBusinessPattern table\OLE_SRC CountyBusinessPattern table.Outputs[OLE DB Source Error Output].Columns[NumberEST_5000_OR_More]"
+                      name="NumberEST_5000_OR_More" />
+                    <outputColumn
+                      refId="Package\DFT - Load FactCountyBusinessPattern table\OLE_SRC CountyBusinessPattern table.Outputs[OLE DB Source Error Output].Columns[YearAK]"
+                      dataType="i4"
+                      lineageId="Package\DFT - Load FactCountyBusinessPattern table\OLE_SRC CountyBusinessPattern table.Outputs[OLE DB Source Error Output].Columns[YearAK]"
+                      name="YearAK" />
+                    <outputColumn
+                      refId="Package\DFT - Load FactCountyBusinessPattern table\OLE_SRC CountyBusinessPattern table.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT - Load FactCountyBusinessPattern table\OLE_SRC CountyBusinessPattern table.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT - Load FactCountyBusinessPattern table\OLE_SRC CountyBusinessPattern table.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT - Load FactCountyBusinessPattern table\OLE_SRC CountyBusinessPattern table.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\DFT - Load FactCountyBusinessPattern table.Paths[Lookup Match Output2]"
+              endId="Package\DFT - Load FactCountyBusinessPattern table\LKP - DimNaics.Inputs[Lookup Input]"
+              name="Lookup Match Output"
+              startId="Package\DFT - Load FactCountyBusinessPattern table\LKP - DimCounty.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\DFT - Load FactCountyBusinessPattern table.Paths[Lookup Match Output1]"
+              endId="Package\DFT - Load FactCountyBusinessPattern table\OLE_DST FactCountyBusinessPattern.Inputs[OLE DB Destination Input]"
+              name="Lookup Match Output"
+              startId="Package\DFT - Load FactCountyBusinessPattern table\LKP - DimYear.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\DFT - Load FactCountyBusinessPattern table.Paths[Lookup Match Output]"
+              endId="Package\DFT - Load FactCountyBusinessPattern table\LKP - DimYear.Inputs[Lookup Input]"
+              name="Lookup Match Output"
+              startId="Package\DFT - Load FactCountyBusinessPattern table\LKP - DimNaics.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\DFT - Load FactCountyBusinessPattern table.Paths[OLE DB Source Output]"
+              endId="Package\DFT - Load FactCountyBusinessPattern table\LKP - DimCounty.Inputs[Lookup Input]"
+              name="OLE DB Source Output"
+              startId="Package\DFT - Load FactCountyBusinessPattern table\OLE_SRC CountyBusinessPattern table.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="sql11">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="288,42"
+          Id="Package\DFT - Load FactCountyBusinessPattern table"
+          TopLeft="134,81" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\DFT - Load FactCountyBusinessPattern table">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="260,42"
+          Id="Package\DFT - Load FactCountyBusinessPattern table\OLE_SRC CountyBusinessPattern table"
+          TopLeft="195.5,26.5" />
+        <NodeLayout
+          Size="260,42"
+          Id="Package\DFT - Load FactCountyBusinessPattern table\LKP - DimNaics"
+          TopLeft="195.5,230.5" />
+        <NodeLayout
+          Size="260,42"
+          Id="Package\DFT - Load FactCountyBusinessPattern table\OLE_DST FactCountyBusinessPattern"
+          TopLeft="195.5,434.5" />
+        <NodeLayout
+          Size="260,42"
+          Id="Package\DFT - Load FactCountyBusinessPattern table\LKP - DimCounty"
+          TopLeft="195.5,128.5" />
+        <NodeLayout
+          Size="260,42"
+          Id="Package\DFT - Load FactCountyBusinessPattern table\LKP - DimYear"
+          TopLeft="195.5,332.5" />
+        <EdgeLayout
+          Id="Package\DFT - Load FactCountyBusinessPattern table.Paths[Lookup Match Output1]"
+          TopLeft="325.5,374.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,20.4453125,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT - Load FactCountyBusinessPattern table.Paths[Lookup Match Output]"
+          TopLeft="325.5,272.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,20.4453125,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT - Load FactCountyBusinessPattern table.Paths[OLE DB Source Output]"
+          TopLeft="325.5,68.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT - Load FactCountyBusinessPattern table.Paths[Lookup Match Output2]"
+          TopLeft="325.5,170.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,20.4453125,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT - Load FactCountyBusinessPattern table\LKP - DimNaics">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[DimNaics]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT - Load FactCountyBusinessPattern table\OLE_SRC CountyBusinessPattern table">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT - Load FactCountyBusinessPattern table\LKP - DimYear">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[DimYear]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT - Load FactCountyBusinessPattern table\LKP - DimCounty">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[DimCounty]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT - Load FactCountyBusinessPattern table\OLE_DST FactCountyBusinessPattern">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

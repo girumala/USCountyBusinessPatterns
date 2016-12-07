@@ -1,0 +1,2616 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="10/26/2013 5:37:02 PM"
+  DTS:CreationName="SSIS.Package.3"
+  DTS:CreatorComputerName="SIVA-PC"
+  DTS:CreatorName="siva-pc\siva"
+  DTS:DTSID="{DCDD56D3-52FF-48AE-8AE5-5BE86FF8C384}"
+  DTS:ExecutableType="SSIS.Package.3"
+  DTS:LastModifiedProductVersion="11.0.2100.60"
+  DTS:LocaleID="1033"
+  DTS:MaxErrorCount="1000"
+  DTS:ObjectName="LoadTextFiles_2011_2007"
+  DTS:PackageType="5"
+  DTS:ProtectionLevel="0"
+  DTS:VersionBuild="42"
+  DTS:VersionGUID="{A5F695ED-3AC4-407B-B6BF-72886C59FDAC}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">6</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[FF Connection TextFile]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{5AC30654-6EEA-4EA9-A71E-5D782BD6217C}"
+      DTS:ObjectName="FF Connection TextFile">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">@[User::FileName]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x0022_"
+          DTS:CodePage="1252">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="fipstate"
+              DTS:DTSID="{712A911E-11A5-4358-A2BA-CC8D5A101263}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="fipscty"
+              DTS:DTSID="{67FA9529-98B3-41CC-BF51-E71C1C8C6455}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="naics"
+              DTS:DTSID="{31EC65FC-BDE9-463D-9EC3-43209E65C5A1}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="empflag"
+              DTS:DTSID="{569C8D26-6AFC-4309-B81E-8088B6939F57}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="emp_nf"
+              DTS:DTSID="{311246AF-479E-4C34-853B-F31BD9915C08}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="emp"
+              DTS:DTSID="{86A832A8-3444-4567-9D9D-2EEF4F5FE06A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="qp1_nf"
+              DTS:DTSID="{8422EE36-AB1F-49F2-9C06-53392EC80103}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="qp1"
+              DTS:DTSID="{4B46432B-A6BD-4463-BC14-A6F82F3D1E86}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ap_nf"
+              DTS:DTSID="{3A1F0E4F-30DA-4120-A941-279A5098B2BB}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ap"
+              DTS:DTSID="{29B20CC8-6607-4FB0-8838-3760A6DD38F5}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="est"
+              DTS:DTSID="{379CD021-EDEC-474B-9B99-FB831BA71B4C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="n1_4"
+              DTS:DTSID="{43678AE9-1707-40D9-A6B0-F4DFB6FD6513}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="n5_9"
+              DTS:DTSID="{318E3246-B73E-41D1-82B5-C3E7E36CCA4B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="n10_19"
+              DTS:DTSID="{E8ACC36A-0790-458D-86E9-8E266CC50498}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="n20_49"
+              DTS:DTSID="{3DB4F756-A70E-462B-B96F-CCAC458D0DBF}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="n50_99"
+              DTS:DTSID="{6EF8FB45-5398-4554-B496-C909A2A1C7F8}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="n100_249"
+              DTS:DTSID="{2E66F786-0969-42D3-BE27-EF8EF5AA590C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="n250_499"
+              DTS:DTSID="{E954829A-5060-4E2B-9639-3D99611003C1}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="n500_999"
+              DTS:DTSID="{A04C3FF1-4959-481E-BE78-192D7802B07B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="n1000"
+              DTS:DTSID="{92B39770-D909-432C-8B52-71CE2AE112A2}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="n1000_1"
+              DTS:DTSID="{84F567A1-293D-40D4-861E-9F8DAC7C4737}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="n1000_2"
+              DTS:DTSID="{067027F9-9DB0-48F7-A25A-CA6CEFB84C3F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="n1000_3"
+              DTS:DTSID="{08B4FE5C-BFD7-45FB-BFB8-9A1B929DF117}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="n1000_4"
+              DTS:DTSID="{694F236C-123F-48E2-AF59-1777F9F947D6}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="censtate"
+              DTS:DTSID="{29A4867A-E1E9-4D55-8A2D-E0144D4AD774}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="cencty"
+              DTS:DTSID="{53B8ED17-A05B-4350-BD56-1FE4EFE18192}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager ErrorOutput]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{B6CB503B-C3FC-4A63-9255-7CB9729C2661}"
+      DTS:ObjectName="Flat File Connection Manager ErrorOutput">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\USCountyBusinessPatterns\ErrorOutput\ErrorOutput.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="fipstate"
+              DTS:DTSID="{52FC8B14-A351-42CD-AC36-01F160849F73}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="fipscty"
+              DTS:DTSID="{F64C7090-2510-46C2-8879-32449AB4816A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="naics"
+              DTS:DTSID="{A9CCEA16-9D1B-45B5-AE21-0D9A42940462}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="empflag"
+              DTS:DTSID="{E695E9A3-2F88-4162-B71D-4B47335DDB0E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="emp_nf"
+              DTS:DTSID="{EE2A1E42-0D6F-420D-9FB1-F9015EE0DCEF}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="emp"
+              DTS:DTSID="{8B7FB2A2-63DF-4AD2-8125-71D0A833E97A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="qp1_nf"
+              DTS:DTSID="{AB74E162-C97E-4FE0-8855-FF902E323F21}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="qp1"
+              DTS:DTSID="{D234C2C6-9656-4E51-AA03-9905BA060728}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ap_nf"
+              DTS:DTSID="{9FC5D71E-91F4-433E-A877-3E129734D0A0}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ap"
+              DTS:DTSID="{57FEB858-87BB-4192-BB87-602BC0B7CE62}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="est"
+              DTS:DTSID="{FBDF6657-C9FB-41E5-AFCB-8D8DA3F12E9E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="n1_4"
+              DTS:DTSID="{4F221F5F-E6A3-43F8-84CE-A7DE234AA2E1}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="n5_9"
+              DTS:DTSID="{FBAFCB36-3903-42FB-A912-63E7158B2BE1}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="n10_19"
+              DTS:DTSID="{AAAF4F2F-1716-4DAD-8A50-FF1EA60A2435}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="n20_49"
+              DTS:DTSID="{4B2B0F6D-77BA-437F-A229-F826B861BAFB}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="n50_99"
+              DTS:DTSID="{32926F73-F60A-4C3F-AF29-3652E166E721}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="n100_249"
+              DTS:DTSID="{8CA83140-028B-4264-821F-55D38B3A8171}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="n250_499"
+              DTS:DTSID="{84B1CF19-3E59-486D-BB77-5BFFE99EC79D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="n500_999"
+              DTS:DTSID="{85B59EF2-BFAE-4B8F-B733-D7AB13F7D528}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="n1000"
+              DTS:DTSID="{7EBCD8C6-C6D6-455A-B2F1-7AE9057984C0}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="n1000_1"
+              DTS:DTSID="{BD2565EB-C7C9-4BBC-ABA0-4FB6D8104B14}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="n1000_2"
+              DTS:DTSID="{00B9D11E-448B-4F00-A3FB-034197FA33BC}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="n1000_3"
+              DTS:DTSID="{82AB49D0-E9F8-423A-8F83-A2EC7FAAFD23}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="n1000_4"
+              DTS:DTSID="{599FC85E-30CE-4F37-B2D9-7CA82DC179C9}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="censtate"
+              DTS:DTSID="{B86A18DF-93D7-4AC9-95DA-0AA31903A948}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="cencty"
+              DTS:DTSID="{E73F1474-1A00-41CC-BA39-F4FC99234991}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ErrorCode"
+              DTS:DTSID="{3BE1966A-0E9A-4164-BD23-FECE2D5788A8}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ErrorColumn"
+              DTS:DTSID="{A1D1770A-B46A-4847-9F05-8C0ACFBE93FA}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{F8B83BBB-3502-41C5-88A5-FC2ABF8BF82A}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="FileName">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{3F8DC22A-8588-4839-880A-D48DCFBA7B47}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="TableType">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\FELC - Load 2011 - 2007 text files"
+      DTS:CreationName="STOCK:FOREACHLOOP"
+      DTS:Description="Foreach Loop Container"
+      DTS:DTSID="{A1D9CAB0-A35A-40F7-994E-B57CA255B283}"
+      DTS:ExecutableType="STOCK:FOREACHLOOP"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="FELC - Load 2011 - 2007 text files">
+      <DTS:ForEachEnumerator
+        DTS:CreationName="DTS.ForEachFileEnumerator.3"
+        DTS:DTSID="{0955F9F6-2C57-4774-957D-3399322A7D4A}"
+        DTS:ObjectName="{0955F9F6-2C57-4774-957D-3399322A7D4A}">
+        <DTS:ObjectData>
+          <ForEachFileEnumeratorProperties>
+            <FEFEProperty
+              Folder="C:\USCountyBusinessPatterns\SourceTextFiles_2011_2007" />
+            <FEFEProperty
+              FileSpec="cbp*.txt" />
+            <FEFEProperty
+              FileNameRetrievalType="0" />
+            <FEFEProperty
+              Recurse="0" />
+          </ForEachFileEnumeratorProperties>
+        </DTS:ObjectData>
+      </DTS:ForEachEnumerator>
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files"
+          DTS:CreationName="SSIS.Pipeline.3"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{2E99BBB6-9F25-4F7B-A89F-32CA8CD87B46}"
+          DTS:ExecutableType="SSIS.Pipeline.3"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="DFT Load 2011 - 2007 text files"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\DER Year"
+                  componentClassID="{49928E82-9C4E-49F0-AABE-3812B82707EC}"
+                  contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+                  name="DER Year"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\DER Year.Inputs[Derived Column Input]"
+                      description="Input to the Derived Column Transformation"
+                      name="Derived Column Input">
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\DER Year.Outputs[Derived Column Output]"
+                      description="Default Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      name="Derived Column Output"
+                      synchronousInputId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\DER Year.Inputs[Derived Column Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\DER Year.Outputs[Derived Column Output].Columns[Year]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          length="4"
+                          lineageId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\DER Year.Outputs[Derived Column Output].Columns[Year]"
+                          name="Year"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">(DT_STR,2,1252)[SUBSTRING]([RIGHT](@[User::FileName],[FINDSTRING]([REVERSE](@[User::FileName]),"\\",1) - 1),4,2) == "98" || (DT_STR,2,1252)[SUBSTRING]([RIGHT](@[User::FileName],[FINDSTRING]([REVERSE](@[User::FileName]),"\\",1) - 1),4,2) == "99" ? (DT_STR,4,1252)((DT_STR,2,1252)"19" + (DT_STR,2,1252)[SUBSTRING]([RIGHT](@[User::FileName],[FINDSTRING]([REVERSE](@[User::FileName]),"\\",1) - 1),4,2)) : (DT_STR,4,1252)((DT_STR,2,1252)"20" + (DT_STR,2,1252)[SUBSTRING]([RIGHT](@[User::FileName],[FINDSTRING]([REVERSE](@[User::FileName]),"\\",1) - 1),4,2))</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">(DT_STR,2,1252)SUBSTRING(RIGHT(@[User::FileName],FINDSTRING(REVERSE(@[User::FileName]),"\\",1) - 1),4,2) == "98" || (DT_STR,2,1252)SUBSTRING(RIGHT(@[User::FileName],FINDSTRING(REVERSE(@[User::FileName]),"\\",1) - 1),4,2) == "99" ? (DT_STR,4,1252)((DT_STR,2,1252)"19" + (DT_STR,2,1252)SUBSTRING(RIGHT(@[User::FileName],FINDSTRING(REVERSE(@[User::FileName]),"\\",1) - 1),4,2)) : (DT_STR,4,1252)((DT_STR,2,1252)"20" + (DT_STR,2,1252)SUBSTRING(RIGHT(@[User::FileName],FINDSTRING(REVERSE(@[User::FileName]),"\\",1) - 1),4,2))</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\DER Year.Outputs[Derived Column Error Output]"
+                      description="Error Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Derived Column Error Output"
+                      synchronousInputId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\DER Year.Inputs[Derived Column Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\DER Year.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\DER Year.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\DER Year.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\DER Year.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_DST ErrorOutput text file"
+                  componentClassID="{8DA75FED-1B7C-407D-B2AD-2B24209CCCA4}"
+                  contactInfo="Flat File Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Flat File Destination"
+                  localeId="1033"
+                  name="FF_DST ErrorOutput text file">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="Specifies whether the data will overwrite or append to the destination file."
+                      name="Overwrite">false</property>
+                    <property
+                      dataType="System.Null"
+                      description="Specifies the text to write to the destination file before any data is written."
+                      expressionType="Notify"
+                      name="Header" />
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_DST ErrorOutput text file.Connections[FlatFileConnection]"
+                      connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager ErrorOutput]"
+                      connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager ErrorOutput]"
+                      name="FlatFileConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_DST ErrorOutput text file.Inputs[Flat File Destination Input]"
+                      hasSideEffects="true"
+                      name="Flat File Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_DST ErrorOutput text file.Inputs[Flat File Destination Input].Columns[fipstate]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="fipstate"
+                          externalMetadataColumnId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_DST ErrorOutput text file.Inputs[Flat File Destination Input].ExternalColumns[fipstate]"
+                          lineageId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_SRC TextFiles from 2011-2007.Outputs[Flat File Source Output].Columns[fipstate]" />
+                        <inputColumn
+                          refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_DST ErrorOutput text file.Inputs[Flat File Destination Input].Columns[fipscty]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="fipscty"
+                          externalMetadataColumnId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_DST ErrorOutput text file.Inputs[Flat File Destination Input].ExternalColumns[fipscty]"
+                          lineageId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_SRC TextFiles from 2011-2007.Outputs[Flat File Source Output].Columns[fipscty]" />
+                        <inputColumn
+                          refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_DST ErrorOutput text file.Inputs[Flat File Destination Input].Columns[naics]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="naics"
+                          externalMetadataColumnId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_DST ErrorOutput text file.Inputs[Flat File Destination Input].ExternalColumns[naics]"
+                          lineageId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_SRC TextFiles from 2011-2007.Outputs[Flat File Source Output].Columns[naics]" />
+                        <inputColumn
+                          refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_DST ErrorOutput text file.Inputs[Flat File Destination Input].Columns[empflag]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="empflag"
+                          externalMetadataColumnId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_DST ErrorOutput text file.Inputs[Flat File Destination Input].ExternalColumns[empflag]"
+                          lineageId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_SRC TextFiles from 2011-2007.Outputs[Flat File Source Output].Columns[empflag]" />
+                        <inputColumn
+                          refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_DST ErrorOutput text file.Inputs[Flat File Destination Input].Columns[emp_nf]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="emp_nf"
+                          externalMetadataColumnId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_DST ErrorOutput text file.Inputs[Flat File Destination Input].ExternalColumns[emp_nf]"
+                          lineageId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_SRC TextFiles from 2011-2007.Outputs[Flat File Source Output].Columns[emp_nf]" />
+                        <inputColumn
+                          refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_DST ErrorOutput text file.Inputs[Flat File Destination Input].Columns[emp]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="emp"
+                          externalMetadataColumnId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_DST ErrorOutput text file.Inputs[Flat File Destination Input].ExternalColumns[emp]"
+                          lineageId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_SRC TextFiles from 2011-2007.Outputs[Flat File Source Output].Columns[emp]" />
+                        <inputColumn
+                          refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_DST ErrorOutput text file.Inputs[Flat File Destination Input].Columns[qp1_nf]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="qp1_nf"
+                          externalMetadataColumnId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_DST ErrorOutput text file.Inputs[Flat File Destination Input].ExternalColumns[qp1_nf]"
+                          lineageId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_SRC TextFiles from 2011-2007.Outputs[Flat File Source Output].Columns[qp1_nf]" />
+                        <inputColumn
+                          refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_DST ErrorOutput text file.Inputs[Flat File Destination Input].Columns[qp1]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="qp1"
+                          externalMetadataColumnId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_DST ErrorOutput text file.Inputs[Flat File Destination Input].ExternalColumns[qp1]"
+                          lineageId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_SRC TextFiles from 2011-2007.Outputs[Flat File Source Output].Columns[qp1]" />
+                        <inputColumn
+                          refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_DST ErrorOutput text file.Inputs[Flat File Destination Input].Columns[ap_nf]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="ap_nf"
+                          externalMetadataColumnId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_DST ErrorOutput text file.Inputs[Flat File Destination Input].ExternalColumns[ap_nf]"
+                          lineageId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_SRC TextFiles from 2011-2007.Outputs[Flat File Source Output].Columns[ap_nf]" />
+                        <inputColumn
+                          refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_DST ErrorOutput text file.Inputs[Flat File Destination Input].Columns[ap]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="ap"
+                          externalMetadataColumnId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_DST ErrorOutput text file.Inputs[Flat File Destination Input].ExternalColumns[ap]"
+                          lineageId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_SRC TextFiles from 2011-2007.Outputs[Flat File Source Output].Columns[ap]" />
+                        <inputColumn
+                          refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_DST ErrorOutput text file.Inputs[Flat File Destination Input].Columns[est]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="est"
+                          externalMetadataColumnId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_DST ErrorOutput text file.Inputs[Flat File Destination Input].ExternalColumns[est]"
+                          lineageId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_SRC TextFiles from 2011-2007.Outputs[Flat File Source Output].Columns[est]" />
+                        <inputColumn
+                          refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_DST ErrorOutput text file.Inputs[Flat File Destination Input].Columns[n1_4]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="n1_4"
+                          externalMetadataColumnId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_DST ErrorOutput text file.Inputs[Flat File Destination Input].ExternalColumns[n1_4]"
+                          lineageId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_SRC TextFiles from 2011-2007.Outputs[Flat File Source Output].Columns[n1_4]" />
+                        <inputColumn
+                          refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_DST ErrorOutput text file.Inputs[Flat File Destination Input].Columns[n5_9]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="n5_9"
+                          externalMetadataColumnId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_DST ErrorOutput text file.Inputs[Flat File Destination Input].ExternalColumns[n5_9]"
+                          lineageId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_SRC TextFiles from 2011-2007.Outputs[Flat File Source Output].Columns[n5_9]" />
+                        <inputColumn
+                          refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_DST ErrorOutput text file.Inputs[Flat File Destination Input].Columns[n10_19]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="n10_19"
+                          externalMetadataColumnId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_DST ErrorOutput text file.Inputs[Flat File Destination Input].ExternalColumns[n10_19]"
+                          lineageId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_SRC TextFiles from 2011-2007.Outputs[Flat File Source Output].Columns[n10_19]" />
+                        <inputColumn
+                          refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_DST ErrorOutput text file.Inputs[Flat File Destination Input].Columns[n20_49]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="n20_49"
+                          externalMetadataColumnId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_DST ErrorOutput text file.Inputs[Flat File Destination Input].ExternalColumns[n20_49]"
+                          lineageId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_SRC TextFiles from 2011-2007.Outputs[Flat File Source Output].Columns[n20_49]" />
+                        <inputColumn
+                          refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_DST ErrorOutput text file.Inputs[Flat File Destination Input].Columns[n50_99]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="n50_99"
+                          externalMetadataColumnId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_DST ErrorOutput text file.Inputs[Flat File Destination Input].ExternalColumns[n50_99]"
+                          lineageId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_SRC TextFiles from 2011-2007.Outputs[Flat File Source Output].Columns[n50_99]" />
+                        <inputColumn
+                          refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_DST ErrorOutput text file.Inputs[Flat File Destination Input].Columns[n100_249]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="n100_249"
+                          externalMetadataColumnId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_DST ErrorOutput text file.Inputs[Flat File Destination Input].ExternalColumns[n100_249]"
+                          lineageId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_SRC TextFiles from 2011-2007.Outputs[Flat File Source Output].Columns[n100_249]" />
+                        <inputColumn
+                          refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_DST ErrorOutput text file.Inputs[Flat File Destination Input].Columns[n250_499]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="n250_499"
+                          externalMetadataColumnId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_DST ErrorOutput text file.Inputs[Flat File Destination Input].ExternalColumns[n250_499]"
+                          lineageId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_SRC TextFiles from 2011-2007.Outputs[Flat File Source Output].Columns[n250_499]" />
+                        <inputColumn
+                          refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_DST ErrorOutput text file.Inputs[Flat File Destination Input].Columns[n500_999]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="n500_999"
+                          externalMetadataColumnId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_DST ErrorOutput text file.Inputs[Flat File Destination Input].ExternalColumns[n500_999]"
+                          lineageId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_SRC TextFiles from 2011-2007.Outputs[Flat File Source Output].Columns[n500_999]" />
+                        <inputColumn
+                          refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_DST ErrorOutput text file.Inputs[Flat File Destination Input].Columns[n1000]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="n1000"
+                          externalMetadataColumnId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_DST ErrorOutput text file.Inputs[Flat File Destination Input].ExternalColumns[n1000]"
+                          lineageId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_SRC TextFiles from 2011-2007.Outputs[Flat File Source Output].Columns[n1000]" />
+                        <inputColumn
+                          refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_DST ErrorOutput text file.Inputs[Flat File Destination Input].Columns[n1000_1]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="n1000_1"
+                          externalMetadataColumnId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_DST ErrorOutput text file.Inputs[Flat File Destination Input].ExternalColumns[n1000_1]"
+                          lineageId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_SRC TextFiles from 2011-2007.Outputs[Flat File Source Output].Columns[n1000_1]" />
+                        <inputColumn
+                          refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_DST ErrorOutput text file.Inputs[Flat File Destination Input].Columns[n1000_2]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="n1000_2"
+                          externalMetadataColumnId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_DST ErrorOutput text file.Inputs[Flat File Destination Input].ExternalColumns[n1000_2]"
+                          lineageId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_SRC TextFiles from 2011-2007.Outputs[Flat File Source Output].Columns[n1000_2]" />
+                        <inputColumn
+                          refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_DST ErrorOutput text file.Inputs[Flat File Destination Input].Columns[n1000_3]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="n1000_3"
+                          externalMetadataColumnId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_DST ErrorOutput text file.Inputs[Flat File Destination Input].ExternalColumns[n1000_3]"
+                          lineageId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_SRC TextFiles from 2011-2007.Outputs[Flat File Source Output].Columns[n1000_3]" />
+                        <inputColumn
+                          refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_DST ErrorOutput text file.Inputs[Flat File Destination Input].Columns[n1000_4]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="n1000_4"
+                          externalMetadataColumnId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_DST ErrorOutput text file.Inputs[Flat File Destination Input].ExternalColumns[n1000_4]"
+                          lineageId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_SRC TextFiles from 2011-2007.Outputs[Flat File Source Output].Columns[n1000_4]" />
+                        <inputColumn
+                          refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_DST ErrorOutput text file.Inputs[Flat File Destination Input].Columns[censtate]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="censtate"
+                          externalMetadataColumnId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_DST ErrorOutput text file.Inputs[Flat File Destination Input].ExternalColumns[censtate]"
+                          lineageId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_SRC TextFiles from 2011-2007.Outputs[Flat File Source Output].Columns[censtate]" />
+                        <inputColumn
+                          refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_DST ErrorOutput text file.Inputs[Flat File Destination Input].Columns[cencty]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="cencty"
+                          externalMetadataColumnId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_DST ErrorOutput text file.Inputs[Flat File Destination Input].ExternalColumns[cencty]"
+                          lineageId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_SRC TextFiles from 2011-2007.Outputs[Flat File Source Output].Columns[cencty]" />
+                        <inputColumn
+                          refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_DST ErrorOutput text file.Inputs[Flat File Destination Input].Columns[ErrorCode]"
+                          cachedDataType="i4"
+                          cachedName="ErrorCode"
+                          externalMetadataColumnId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_DST ErrorOutput text file.Inputs[Flat File Destination Input].ExternalColumns[ErrorCode]"
+                          lineageId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\OLE_DST CountyBusinessPattern table.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]" />
+                        <inputColumn
+                          refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_DST ErrorOutput text file.Inputs[Flat File Destination Input].Columns[ErrorColumn]"
+                          cachedDataType="i4"
+                          cachedName="ErrorColumn"
+                          externalMetadataColumnId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_DST ErrorOutput text file.Inputs[Flat File Destination Input].ExternalColumns[ErrorColumn]"
+                          lineageId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\OLE_DST CountyBusinessPattern table.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_DST ErrorOutput text file.Inputs[Flat File Destination Input].ExternalColumns[fipstate]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="fipstate" />
+                        <externalMetadataColumn
+                          refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_DST ErrorOutput text file.Inputs[Flat File Destination Input].ExternalColumns[fipscty]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="fipscty" />
+                        <externalMetadataColumn
+                          refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_DST ErrorOutput text file.Inputs[Flat File Destination Input].ExternalColumns[naics]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="naics" />
+                        <externalMetadataColumn
+                          refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_DST ErrorOutput text file.Inputs[Flat File Destination Input].ExternalColumns[empflag]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="empflag" />
+                        <externalMetadataColumn
+                          refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_DST ErrorOutput text file.Inputs[Flat File Destination Input].ExternalColumns[emp_nf]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="emp_nf" />
+                        <externalMetadataColumn
+                          refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_DST ErrorOutput text file.Inputs[Flat File Destination Input].ExternalColumns[emp]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="emp" />
+                        <externalMetadataColumn
+                          refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_DST ErrorOutput text file.Inputs[Flat File Destination Input].ExternalColumns[qp1_nf]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="qp1_nf" />
+                        <externalMetadataColumn
+                          refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_DST ErrorOutput text file.Inputs[Flat File Destination Input].ExternalColumns[qp1]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="qp1" />
+                        <externalMetadataColumn
+                          refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_DST ErrorOutput text file.Inputs[Flat File Destination Input].ExternalColumns[ap_nf]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="ap_nf" />
+                        <externalMetadataColumn
+                          refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_DST ErrorOutput text file.Inputs[Flat File Destination Input].ExternalColumns[ap]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="ap" />
+                        <externalMetadataColumn
+                          refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_DST ErrorOutput text file.Inputs[Flat File Destination Input].ExternalColumns[est]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="est" />
+                        <externalMetadataColumn
+                          refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_DST ErrorOutput text file.Inputs[Flat File Destination Input].ExternalColumns[n1_4]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="n1_4" />
+                        <externalMetadataColumn
+                          refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_DST ErrorOutput text file.Inputs[Flat File Destination Input].ExternalColumns[n5_9]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="n5_9" />
+                        <externalMetadataColumn
+                          refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_DST ErrorOutput text file.Inputs[Flat File Destination Input].ExternalColumns[n10_19]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="n10_19" />
+                        <externalMetadataColumn
+                          refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_DST ErrorOutput text file.Inputs[Flat File Destination Input].ExternalColumns[n20_49]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="n20_49" />
+                        <externalMetadataColumn
+                          refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_DST ErrorOutput text file.Inputs[Flat File Destination Input].ExternalColumns[n50_99]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="n50_99" />
+                        <externalMetadataColumn
+                          refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_DST ErrorOutput text file.Inputs[Flat File Destination Input].ExternalColumns[n100_249]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="n100_249" />
+                        <externalMetadataColumn
+                          refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_DST ErrorOutput text file.Inputs[Flat File Destination Input].ExternalColumns[n250_499]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="n250_499" />
+                        <externalMetadataColumn
+                          refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_DST ErrorOutput text file.Inputs[Flat File Destination Input].ExternalColumns[n500_999]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="n500_999" />
+                        <externalMetadataColumn
+                          refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_DST ErrorOutput text file.Inputs[Flat File Destination Input].ExternalColumns[n1000]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="n1000" />
+                        <externalMetadataColumn
+                          refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_DST ErrorOutput text file.Inputs[Flat File Destination Input].ExternalColumns[n1000_1]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="n1000_1" />
+                        <externalMetadataColumn
+                          refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_DST ErrorOutput text file.Inputs[Flat File Destination Input].ExternalColumns[n1000_2]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="n1000_2" />
+                        <externalMetadataColumn
+                          refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_DST ErrorOutput text file.Inputs[Flat File Destination Input].ExternalColumns[n1000_3]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="n1000_3" />
+                        <externalMetadataColumn
+                          refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_DST ErrorOutput text file.Inputs[Flat File Destination Input].ExternalColumns[n1000_4]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="n1000_4" />
+                        <externalMetadataColumn
+                          refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_DST ErrorOutput text file.Inputs[Flat File Destination Input].ExternalColumns[censtate]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="censtate" />
+                        <externalMetadataColumn
+                          refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_DST ErrorOutput text file.Inputs[Flat File Destination Input].ExternalColumns[cencty]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="cencty" />
+                        <externalMetadataColumn
+                          refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_DST ErrorOutput text file.Inputs[Flat File Destination Input].ExternalColumns[ErrorCode]"
+                          dataType="i4"
+                          name="ErrorCode" />
+                        <externalMetadataColumn
+                          refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_DST ErrorOutput text file.Inputs[Flat File Destination Input].ExternalColumns[ErrorColumn]"
+                          dataType="i4"
+                          name="ErrorColumn" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                </component>
+                <component
+                  refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_SRC TextFiles from 2011-2007"
+                  componentClassID="{D23FD76B-F51D-420F-BBCB-19CBF6AC1AB4}"
+                  contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+                  description="Flat File Source"
+                  localeId="1033"
+                  name="FF_SRC TextFiles from 2011-2007"
+                  usesDispositions="true"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="Specifies whether zero-length columns are treated as null."
+                      name="RetainNulls">true</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                      name="FileNameColumnName"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_SRC TextFiles from 2011-2007.Connections[FlatFileConnection]"
+                      connectionManagerID="Package.ConnectionManagers[FF Connection TextFile]"
+                      connectionManagerRefId="Package.ConnectionManagers[FF Connection TextFile]"
+                      name="FlatFileConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_SRC TextFiles from 2011-2007.Outputs[Flat File Source Output]"
+                      name="Flat File Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_SRC TextFiles from 2011-2007.Outputs[Flat File Source Output].Columns[fipstate]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_SRC TextFiles from 2011-2007.Outputs[Flat File Source Output].ExternalColumns[fipstate]"
+                          length="50"
+                          lineageId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_SRC TextFiles from 2011-2007.Outputs[Flat File Source Output].Columns[fipstate]"
+                          name="fipstate"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_SRC TextFiles from 2011-2007.Outputs[Flat File Source Output].Columns[fipscty]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_SRC TextFiles from 2011-2007.Outputs[Flat File Source Output].ExternalColumns[fipscty]"
+                          length="50"
+                          lineageId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_SRC TextFiles from 2011-2007.Outputs[Flat File Source Output].Columns[fipscty]"
+                          name="fipscty"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_SRC TextFiles from 2011-2007.Outputs[Flat File Source Output].Columns[naics]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_SRC TextFiles from 2011-2007.Outputs[Flat File Source Output].ExternalColumns[naics]"
+                          length="50"
+                          lineageId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_SRC TextFiles from 2011-2007.Outputs[Flat File Source Output].Columns[naics]"
+                          name="naics"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_SRC TextFiles from 2011-2007.Outputs[Flat File Source Output].Columns[empflag]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_SRC TextFiles from 2011-2007.Outputs[Flat File Source Output].ExternalColumns[empflag]"
+                          length="50"
+                          lineageId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_SRC TextFiles from 2011-2007.Outputs[Flat File Source Output].Columns[empflag]"
+                          name="empflag"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_SRC TextFiles from 2011-2007.Outputs[Flat File Source Output].Columns[emp_nf]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_SRC TextFiles from 2011-2007.Outputs[Flat File Source Output].ExternalColumns[emp_nf]"
+                          length="50"
+                          lineageId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_SRC TextFiles from 2011-2007.Outputs[Flat File Source Output].Columns[emp_nf]"
+                          name="emp_nf"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_SRC TextFiles from 2011-2007.Outputs[Flat File Source Output].Columns[emp]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_SRC TextFiles from 2011-2007.Outputs[Flat File Source Output].ExternalColumns[emp]"
+                          length="50"
+                          lineageId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_SRC TextFiles from 2011-2007.Outputs[Flat File Source Output].Columns[emp]"
+                          name="emp"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_SRC TextFiles from 2011-2007.Outputs[Flat File Source Output].Columns[qp1_nf]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_SRC TextFiles from 2011-2007.Outputs[Flat File Source Output].ExternalColumns[qp1_nf]"
+                          length="50"
+                          lineageId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_SRC TextFiles from 2011-2007.Outputs[Flat File Source Output].Columns[qp1_nf]"
+                          name="qp1_nf"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_SRC TextFiles from 2011-2007.Outputs[Flat File Source Output].Columns[qp1]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_SRC TextFiles from 2011-2007.Outputs[Flat File Source Output].ExternalColumns[qp1]"
+                          length="50"
+                          lineageId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_SRC TextFiles from 2011-2007.Outputs[Flat File Source Output].Columns[qp1]"
+                          name="qp1"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_SRC TextFiles from 2011-2007.Outputs[Flat File Source Output].Columns[ap_nf]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_SRC TextFiles from 2011-2007.Outputs[Flat File Source Output].ExternalColumns[ap_nf]"
+                          length="50"
+                          lineageId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_SRC TextFiles from 2011-2007.Outputs[Flat File Source Output].Columns[ap_nf]"
+                          name="ap_nf"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_SRC TextFiles from 2011-2007.Outputs[Flat File Source Output].Columns[ap]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_SRC TextFiles from 2011-2007.Outputs[Flat File Source Output].ExternalColumns[ap]"
+                          length="50"
+                          lineageId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_SRC TextFiles from 2011-2007.Outputs[Flat File Source Output].Columns[ap]"
+                          name="ap"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_SRC TextFiles from 2011-2007.Outputs[Flat File Source Output].Columns[est]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_SRC TextFiles from 2011-2007.Outputs[Flat File Source Output].ExternalColumns[est]"
+                          length="50"
+                          lineageId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_SRC TextFiles from 2011-2007.Outputs[Flat File Source Output].Columns[est]"
+                          name="est"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_SRC TextFiles from 2011-2007.Outputs[Flat File Source Output].Columns[n1_4]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_SRC TextFiles from 2011-2007.Outputs[Flat File Source Output].ExternalColumns[n1_4]"
+                          length="50"
+                          lineageId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_SRC TextFiles from 2011-2007.Outputs[Flat File Source Output].Columns[n1_4]"
+                          name="n1_4"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_SRC TextFiles from 2011-2007.Outputs[Flat File Source Output].Columns[n5_9]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_SRC TextFiles from 2011-2007.Outputs[Flat File Source Output].ExternalColumns[n5_9]"
+                          length="50"
+                          lineageId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_SRC TextFiles from 2011-2007.Outputs[Flat File Source Output].Columns[n5_9]"
+                          name="n5_9"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_SRC TextFiles from 2011-2007.Outputs[Flat File Source Output].Columns[n10_19]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_SRC TextFiles from 2011-2007.Outputs[Flat File Source Output].ExternalColumns[n10_19]"
+                          length="50"
+                          lineageId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_SRC TextFiles from 2011-2007.Outputs[Flat File Source Output].Columns[n10_19]"
+                          name="n10_19"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_SRC TextFiles from 2011-2007.Outputs[Flat File Source Output].Columns[n20_49]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_SRC TextFiles from 2011-2007.Outputs[Flat File Source Output].ExternalColumns[n20_49]"
+                          length="50"
+                          lineageId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_SRC TextFiles from 2011-2007.Outputs[Flat File Source Output].Columns[n20_49]"
+                          name="n20_49"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_SRC TextFiles from 2011-2007.Outputs[Flat File Source Output].Columns[n50_99]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_SRC TextFiles from 2011-2007.Outputs[Flat File Source Output].ExternalColumns[n50_99]"
+                          length="50"
+                          lineageId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_SRC TextFiles from 2011-2007.Outputs[Flat File Source Output].Columns[n50_99]"
+                          name="n50_99"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_SRC TextFiles from 2011-2007.Outputs[Flat File Source Output].Columns[n100_249]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_SRC TextFiles from 2011-2007.Outputs[Flat File Source Output].ExternalColumns[n100_249]"
+                          length="50"
+                          lineageId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_SRC TextFiles from 2011-2007.Outputs[Flat File Source Output].Columns[n100_249]"
+                          name="n100_249"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_SRC TextFiles from 2011-2007.Outputs[Flat File Source Output].Columns[n250_499]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_SRC TextFiles from 2011-2007.Outputs[Flat File Source Output].ExternalColumns[n250_499]"
+                          length="50"
+                          lineageId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_SRC TextFiles from 2011-2007.Outputs[Flat File Source Output].Columns[n250_499]"
+                          name="n250_499"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_SRC TextFiles from 2011-2007.Outputs[Flat File Source Output].Columns[n500_999]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_SRC TextFiles from 2011-2007.Outputs[Flat File Source Output].ExternalColumns[n500_999]"
+                          length="50"
+                          lineageId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_SRC TextFiles from 2011-2007.Outputs[Flat File Source Output].Columns[n500_999]"
+                          name="n500_999"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_SRC TextFiles from 2011-2007.Outputs[Flat File Source Output].Columns[n1000]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_SRC TextFiles from 2011-2007.Outputs[Flat File Source Output].ExternalColumns[n1000]"
+                          length="50"
+                          lineageId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_SRC TextFiles from 2011-2007.Outputs[Flat File Source Output].Columns[n1000]"
+                          name="n1000"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_SRC TextFiles from 2011-2007.Outputs[Flat File Source Output].Columns[n1000_1]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_SRC TextFiles from 2011-2007.Outputs[Flat File Source Output].ExternalColumns[n1000_1]"
+                          length="50"
+                          lineageId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_SRC TextFiles from 2011-2007.Outputs[Flat File Source Output].Columns[n1000_1]"
+                          name="n1000_1"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_SRC TextFiles from 2011-2007.Outputs[Flat File Source Output].Columns[n1000_2]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_SRC TextFiles from 2011-2007.Outputs[Flat File Source Output].ExternalColumns[n1000_2]"
+                          length="50"
+                          lineageId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_SRC TextFiles from 2011-2007.Outputs[Flat File Source Output].Columns[n1000_2]"
+                          name="n1000_2"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_SRC TextFiles from 2011-2007.Outputs[Flat File Source Output].Columns[n1000_3]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_SRC TextFiles from 2011-2007.Outputs[Flat File Source Output].ExternalColumns[n1000_3]"
+                          length="50"
+                          lineageId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_SRC TextFiles from 2011-2007.Outputs[Flat File Source Output].Columns[n1000_3]"
+                          name="n1000_3"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_SRC TextFiles from 2011-2007.Outputs[Flat File Source Output].Columns[n1000_4]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_SRC TextFiles from 2011-2007.Outputs[Flat File Source Output].ExternalColumns[n1000_4]"
+                          length="50"
+                          lineageId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_SRC TextFiles from 2011-2007.Outputs[Flat File Source Output].Columns[n1000_4]"
+                          name="n1000_4"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_SRC TextFiles from 2011-2007.Outputs[Flat File Source Output].Columns[censtate]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_SRC TextFiles from 2011-2007.Outputs[Flat File Source Output].ExternalColumns[censtate]"
+                          length="50"
+                          lineageId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_SRC TextFiles from 2011-2007.Outputs[Flat File Source Output].Columns[censtate]"
+                          name="censtate"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_SRC TextFiles from 2011-2007.Outputs[Flat File Source Output].Columns[cencty]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_SRC TextFiles from 2011-2007.Outputs[Flat File Source Output].ExternalColumns[cencty]"
+                          length="50"
+                          lineageId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_SRC TextFiles from 2011-2007.Outputs[Flat File Source Output].Columns[cencty]"
+                          name="cencty"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_SRC TextFiles from 2011-2007.Outputs[Flat File Source Output].ExternalColumns[fipstate]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="fipstate" />
+                        <externalMetadataColumn
+                          refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_SRC TextFiles from 2011-2007.Outputs[Flat File Source Output].ExternalColumns[fipscty]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="fipscty" />
+                        <externalMetadataColumn
+                          refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_SRC TextFiles from 2011-2007.Outputs[Flat File Source Output].ExternalColumns[naics]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="naics" />
+                        <externalMetadataColumn
+                          refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_SRC TextFiles from 2011-2007.Outputs[Flat File Source Output].ExternalColumns[empflag]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="empflag" />
+                        <externalMetadataColumn
+                          refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_SRC TextFiles from 2011-2007.Outputs[Flat File Source Output].ExternalColumns[emp_nf]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="emp_nf" />
+                        <externalMetadataColumn
+                          refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_SRC TextFiles from 2011-2007.Outputs[Flat File Source Output].ExternalColumns[emp]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="emp" />
+                        <externalMetadataColumn
+                          refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_SRC TextFiles from 2011-2007.Outputs[Flat File Source Output].ExternalColumns[qp1_nf]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="qp1_nf" />
+                        <externalMetadataColumn
+                          refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_SRC TextFiles from 2011-2007.Outputs[Flat File Source Output].ExternalColumns[qp1]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="qp1" />
+                        <externalMetadataColumn
+                          refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_SRC TextFiles from 2011-2007.Outputs[Flat File Source Output].ExternalColumns[ap_nf]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="ap_nf" />
+                        <externalMetadataColumn
+                          refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_SRC TextFiles from 2011-2007.Outputs[Flat File Source Output].ExternalColumns[ap]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="ap" />
+                        <externalMetadataColumn
+                          refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_SRC TextFiles from 2011-2007.Outputs[Flat File Source Output].ExternalColumns[est]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="est" />
+                        <externalMetadataColumn
+                          refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_SRC TextFiles from 2011-2007.Outputs[Flat File Source Output].ExternalColumns[n1_4]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="n1_4" />
+                        <externalMetadataColumn
+                          refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_SRC TextFiles from 2011-2007.Outputs[Flat File Source Output].ExternalColumns[n5_9]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="n5_9" />
+                        <externalMetadataColumn
+                          refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_SRC TextFiles from 2011-2007.Outputs[Flat File Source Output].ExternalColumns[n10_19]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="n10_19" />
+                        <externalMetadataColumn
+                          refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_SRC TextFiles from 2011-2007.Outputs[Flat File Source Output].ExternalColumns[n20_49]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="n20_49" />
+                        <externalMetadataColumn
+                          refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_SRC TextFiles from 2011-2007.Outputs[Flat File Source Output].ExternalColumns[n50_99]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="n50_99" />
+                        <externalMetadataColumn
+                          refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_SRC TextFiles from 2011-2007.Outputs[Flat File Source Output].ExternalColumns[n100_249]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="n100_249" />
+                        <externalMetadataColumn
+                          refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_SRC TextFiles from 2011-2007.Outputs[Flat File Source Output].ExternalColumns[n250_499]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="n250_499" />
+                        <externalMetadataColumn
+                          refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_SRC TextFiles from 2011-2007.Outputs[Flat File Source Output].ExternalColumns[n500_999]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="n500_999" />
+                        <externalMetadataColumn
+                          refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_SRC TextFiles from 2011-2007.Outputs[Flat File Source Output].ExternalColumns[n1000]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="n1000" />
+                        <externalMetadataColumn
+                          refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_SRC TextFiles from 2011-2007.Outputs[Flat File Source Output].ExternalColumns[n1000_1]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="n1000_1" />
+                        <externalMetadataColumn
+                          refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_SRC TextFiles from 2011-2007.Outputs[Flat File Source Output].ExternalColumns[n1000_2]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="n1000_2" />
+                        <externalMetadataColumn
+                          refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_SRC TextFiles from 2011-2007.Outputs[Flat File Source Output].ExternalColumns[n1000_3]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="n1000_3" />
+                        <externalMetadataColumn
+                          refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_SRC TextFiles from 2011-2007.Outputs[Flat File Source Output].ExternalColumns[n1000_4]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="n1000_4" />
+                        <externalMetadataColumn
+                          refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_SRC TextFiles from 2011-2007.Outputs[Flat File Source Output].ExternalColumns[censtate]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="censtate" />
+                        <externalMetadataColumn
+                          refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_SRC TextFiles from 2011-2007.Outputs[Flat File Source Output].ExternalColumns[cencty]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="cencty" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_SRC TextFiles from 2011-2007.Outputs[Flat File Source Error Output]"
+                      isErrorOut="true"
+                      name="Flat File Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_SRC TextFiles from 2011-2007.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                          codePage="1252"
+                          dataType="text"
+                          description="Flat File Source Error Output Column"
+                          lineageId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_SRC TextFiles from 2011-2007.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                          name="Flat File Source Error Output Column" />
+                        <outputColumn
+                          refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_SRC TextFiles from 2011-2007.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_SRC TextFiles from 2011-2007.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_SRC TextFiles from 2011-2007.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_SRC TextFiles from 2011-2007.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\OLE_DST CountyBusinessPattern table"
+                  componentClassID="{4ADA7EAA-136C-4215-8098-D7A7C27FC0D1}"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="OLE_DST CountyBusinessPattern table"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dbo].[CountyBusinessPattern]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS,ROWS_PER_BATCH = 10000</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">10000</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\OLE_DST CountyBusinessPattern table.Connections[OleDbConnection]"
+                      connectionManagerID="{622FF495-5314-436D-A20D-6FE4E292CED9}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[SIVA-PC.USCountyBusinessPatternsStaging 1]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\OLE_DST CountyBusinessPattern table.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="RedirectRow"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\OLE_DST CountyBusinessPattern table.Inputs[OLE DB Destination Input].Columns[fipstate]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="fipstate"
+                          externalMetadataColumnId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\OLE_DST CountyBusinessPattern table.Inputs[OLE DB Destination Input].ExternalColumns[fipstate]"
+                          lineageId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_SRC TextFiles from 2011-2007.Outputs[Flat File Source Output].Columns[fipstate]" />
+                        <inputColumn
+                          refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\OLE_DST CountyBusinessPattern table.Inputs[OLE DB Destination Input].Columns[fipscty]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="fipscty"
+                          externalMetadataColumnId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\OLE_DST CountyBusinessPattern table.Inputs[OLE DB Destination Input].ExternalColumns[fipscty]"
+                          lineageId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_SRC TextFiles from 2011-2007.Outputs[Flat File Source Output].Columns[fipscty]" />
+                        <inputColumn
+                          refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\OLE_DST CountyBusinessPattern table.Inputs[OLE DB Destination Input].Columns[naics]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="naics"
+                          externalMetadataColumnId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\OLE_DST CountyBusinessPattern table.Inputs[OLE DB Destination Input].ExternalColumns[naics]"
+                          lineageId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_SRC TextFiles from 2011-2007.Outputs[Flat File Source Output].Columns[naics]" />
+                        <inputColumn
+                          refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\OLE_DST CountyBusinessPattern table.Inputs[OLE DB Destination Input].Columns[empflag]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="empflag"
+                          externalMetadataColumnId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\OLE_DST CountyBusinessPattern table.Inputs[OLE DB Destination Input].ExternalColumns[empflag]"
+                          lineageId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_SRC TextFiles from 2011-2007.Outputs[Flat File Source Output].Columns[empflag]" />
+                        <inputColumn
+                          refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\OLE_DST CountyBusinessPattern table.Inputs[OLE DB Destination Input].Columns[emp_nf]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="emp_nf"
+                          externalMetadataColumnId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\OLE_DST CountyBusinessPattern table.Inputs[OLE DB Destination Input].ExternalColumns[emp_nf]"
+                          lineageId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_SRC TextFiles from 2011-2007.Outputs[Flat File Source Output].Columns[emp_nf]" />
+                        <inputColumn
+                          refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\OLE_DST CountyBusinessPattern table.Inputs[OLE DB Destination Input].Columns[emp]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="emp"
+                          externalMetadataColumnId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\OLE_DST CountyBusinessPattern table.Inputs[OLE DB Destination Input].ExternalColumns[emp]"
+                          lineageId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_SRC TextFiles from 2011-2007.Outputs[Flat File Source Output].Columns[emp]" />
+                        <inputColumn
+                          refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\OLE_DST CountyBusinessPattern table.Inputs[OLE DB Destination Input].Columns[qp1_nf]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="qp1_nf"
+                          externalMetadataColumnId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\OLE_DST CountyBusinessPattern table.Inputs[OLE DB Destination Input].ExternalColumns[qp1_nf]"
+                          lineageId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_SRC TextFiles from 2011-2007.Outputs[Flat File Source Output].Columns[qp1_nf]" />
+                        <inputColumn
+                          refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\OLE_DST CountyBusinessPattern table.Inputs[OLE DB Destination Input].Columns[qp1]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="qp1"
+                          externalMetadataColumnId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\OLE_DST CountyBusinessPattern table.Inputs[OLE DB Destination Input].ExternalColumns[qp1]"
+                          lineageId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_SRC TextFiles from 2011-2007.Outputs[Flat File Source Output].Columns[qp1]" />
+                        <inputColumn
+                          refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\OLE_DST CountyBusinessPattern table.Inputs[OLE DB Destination Input].Columns[ap_nf]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="ap_nf"
+                          externalMetadataColumnId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\OLE_DST CountyBusinessPattern table.Inputs[OLE DB Destination Input].ExternalColumns[ap_nf]"
+                          lineageId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_SRC TextFiles from 2011-2007.Outputs[Flat File Source Output].Columns[ap_nf]" />
+                        <inputColumn
+                          refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\OLE_DST CountyBusinessPattern table.Inputs[OLE DB Destination Input].Columns[ap]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="ap"
+                          externalMetadataColumnId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\OLE_DST CountyBusinessPattern table.Inputs[OLE DB Destination Input].ExternalColumns[ap]"
+                          lineageId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_SRC TextFiles from 2011-2007.Outputs[Flat File Source Output].Columns[ap]" />
+                        <inputColumn
+                          refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\OLE_DST CountyBusinessPattern table.Inputs[OLE DB Destination Input].Columns[est]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="est"
+                          externalMetadataColumnId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\OLE_DST CountyBusinessPattern table.Inputs[OLE DB Destination Input].ExternalColumns[est]"
+                          lineageId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_SRC TextFiles from 2011-2007.Outputs[Flat File Source Output].Columns[est]" />
+                        <inputColumn
+                          refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\OLE_DST CountyBusinessPattern table.Inputs[OLE DB Destination Input].Columns[n1_4]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="n1_4"
+                          externalMetadataColumnId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\OLE_DST CountyBusinessPattern table.Inputs[OLE DB Destination Input].ExternalColumns[n1_4]"
+                          lineageId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_SRC TextFiles from 2011-2007.Outputs[Flat File Source Output].Columns[n1_4]" />
+                        <inputColumn
+                          refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\OLE_DST CountyBusinessPattern table.Inputs[OLE DB Destination Input].Columns[n5_9]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="n5_9"
+                          externalMetadataColumnId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\OLE_DST CountyBusinessPattern table.Inputs[OLE DB Destination Input].ExternalColumns[n5_9]"
+                          lineageId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_SRC TextFiles from 2011-2007.Outputs[Flat File Source Output].Columns[n5_9]" />
+                        <inputColumn
+                          refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\OLE_DST CountyBusinessPattern table.Inputs[OLE DB Destination Input].Columns[n10_19]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="n10_19"
+                          externalMetadataColumnId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\OLE_DST CountyBusinessPattern table.Inputs[OLE DB Destination Input].ExternalColumns[n10_19]"
+                          lineageId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_SRC TextFiles from 2011-2007.Outputs[Flat File Source Output].Columns[n10_19]" />
+                        <inputColumn
+                          refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\OLE_DST CountyBusinessPattern table.Inputs[OLE DB Destination Input].Columns[n20_49]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="n20_49"
+                          externalMetadataColumnId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\OLE_DST CountyBusinessPattern table.Inputs[OLE DB Destination Input].ExternalColumns[n20_49]"
+                          lineageId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_SRC TextFiles from 2011-2007.Outputs[Flat File Source Output].Columns[n20_49]" />
+                        <inputColumn
+                          refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\OLE_DST CountyBusinessPattern table.Inputs[OLE DB Destination Input].Columns[n50_99]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="n50_99"
+                          externalMetadataColumnId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\OLE_DST CountyBusinessPattern table.Inputs[OLE DB Destination Input].ExternalColumns[n50_99]"
+                          lineageId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_SRC TextFiles from 2011-2007.Outputs[Flat File Source Output].Columns[n50_99]" />
+                        <inputColumn
+                          refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\OLE_DST CountyBusinessPattern table.Inputs[OLE DB Destination Input].Columns[n100_249]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="n100_249"
+                          externalMetadataColumnId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\OLE_DST CountyBusinessPattern table.Inputs[OLE DB Destination Input].ExternalColumns[n100_249]"
+                          lineageId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_SRC TextFiles from 2011-2007.Outputs[Flat File Source Output].Columns[n100_249]" />
+                        <inputColumn
+                          refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\OLE_DST CountyBusinessPattern table.Inputs[OLE DB Destination Input].Columns[n250_499]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="n250_499"
+                          externalMetadataColumnId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\OLE_DST CountyBusinessPattern table.Inputs[OLE DB Destination Input].ExternalColumns[n250_499]"
+                          lineageId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_SRC TextFiles from 2011-2007.Outputs[Flat File Source Output].Columns[n250_499]" />
+                        <inputColumn
+                          refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\OLE_DST CountyBusinessPattern table.Inputs[OLE DB Destination Input].Columns[n500_999]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="n500_999"
+                          externalMetadataColumnId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\OLE_DST CountyBusinessPattern table.Inputs[OLE DB Destination Input].ExternalColumns[n500_999]"
+                          lineageId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_SRC TextFiles from 2011-2007.Outputs[Flat File Source Output].Columns[n500_999]" />
+                        <inputColumn
+                          refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\OLE_DST CountyBusinessPattern table.Inputs[OLE DB Destination Input].Columns[n1000]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="n1000"
+                          externalMetadataColumnId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\OLE_DST CountyBusinessPattern table.Inputs[OLE DB Destination Input].ExternalColumns[n1000]"
+                          lineageId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_SRC TextFiles from 2011-2007.Outputs[Flat File Source Output].Columns[n1000]" />
+                        <inputColumn
+                          refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\OLE_DST CountyBusinessPattern table.Inputs[OLE DB Destination Input].Columns[n1000_1]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="n1000_1"
+                          externalMetadataColumnId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\OLE_DST CountyBusinessPattern table.Inputs[OLE DB Destination Input].ExternalColumns[n1000_1]"
+                          lineageId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_SRC TextFiles from 2011-2007.Outputs[Flat File Source Output].Columns[n1000_1]" />
+                        <inputColumn
+                          refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\OLE_DST CountyBusinessPattern table.Inputs[OLE DB Destination Input].Columns[n1000_2]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="n1000_2"
+                          externalMetadataColumnId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\OLE_DST CountyBusinessPattern table.Inputs[OLE DB Destination Input].ExternalColumns[n1000_2]"
+                          lineageId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_SRC TextFiles from 2011-2007.Outputs[Flat File Source Output].Columns[n1000_2]" />
+                        <inputColumn
+                          refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\OLE_DST CountyBusinessPattern table.Inputs[OLE DB Destination Input].Columns[n1000_3]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="n1000_3"
+                          externalMetadataColumnId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\OLE_DST CountyBusinessPattern table.Inputs[OLE DB Destination Input].ExternalColumns[n1000_3]"
+                          lineageId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_SRC TextFiles from 2011-2007.Outputs[Flat File Source Output].Columns[n1000_3]" />
+                        <inputColumn
+                          refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\OLE_DST CountyBusinessPattern table.Inputs[OLE DB Destination Input].Columns[n1000_4]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="n1000_4"
+                          externalMetadataColumnId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\OLE_DST CountyBusinessPattern table.Inputs[OLE DB Destination Input].ExternalColumns[n1000_4]"
+                          lineageId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_SRC TextFiles from 2011-2007.Outputs[Flat File Source Output].Columns[n1000_4]" />
+                        <inputColumn
+                          refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\OLE_DST CountyBusinessPattern table.Inputs[OLE DB Destination Input].Columns[censtate]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="censtate"
+                          externalMetadataColumnId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\OLE_DST CountyBusinessPattern table.Inputs[OLE DB Destination Input].ExternalColumns[censtate]"
+                          lineageId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_SRC TextFiles from 2011-2007.Outputs[Flat File Source Output].Columns[censtate]" />
+                        <inputColumn
+                          refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\OLE_DST CountyBusinessPattern table.Inputs[OLE DB Destination Input].Columns[cencty]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="cencty"
+                          externalMetadataColumnId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\OLE_DST CountyBusinessPattern table.Inputs[OLE DB Destination Input].ExternalColumns[cencty]"
+                          lineageId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_SRC TextFiles from 2011-2007.Outputs[Flat File Source Output].Columns[cencty]" />
+                        <inputColumn
+                          refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\OLE_DST CountyBusinessPattern table.Inputs[OLE DB Destination Input].Columns[Year]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="4"
+                          cachedName="Year"
+                          externalMetadataColumnId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\OLE_DST CountyBusinessPattern table.Inputs[OLE DB Destination Input].ExternalColumns[year]"
+                          lineageId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\DER Year.Outputs[Derived Column Output].Columns[Year]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\OLE_DST CountyBusinessPattern table.Inputs[OLE DB Destination Input].ExternalColumns[CountyBusinessPatternId]"
+                          dataType="i4"
+                          name="CountyBusinessPatternId" />
+                        <externalMetadataColumn
+                          refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\OLE_DST CountyBusinessPattern table.Inputs[OLE DB Destination Input].ExternalColumns[fipstate]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="fipstate" />
+                        <externalMetadataColumn
+                          refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\OLE_DST CountyBusinessPattern table.Inputs[OLE DB Destination Input].ExternalColumns[fipscty]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="fipscty" />
+                        <externalMetadataColumn
+                          refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\OLE_DST CountyBusinessPattern table.Inputs[OLE DB Destination Input].ExternalColumns[naics]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="naics" />
+                        <externalMetadataColumn
+                          refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\OLE_DST CountyBusinessPattern table.Inputs[OLE DB Destination Input].ExternalColumns[empflag]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="empflag" />
+                        <externalMetadataColumn
+                          refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\OLE_DST CountyBusinessPattern table.Inputs[OLE DB Destination Input].ExternalColumns[emp_nf]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="emp_nf" />
+                        <externalMetadataColumn
+                          refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\OLE_DST CountyBusinessPattern table.Inputs[OLE DB Destination Input].ExternalColumns[emp]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="emp" />
+                        <externalMetadataColumn
+                          refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\OLE_DST CountyBusinessPattern table.Inputs[OLE DB Destination Input].ExternalColumns[qp1_nf]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="qp1_nf" />
+                        <externalMetadataColumn
+                          refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\OLE_DST CountyBusinessPattern table.Inputs[OLE DB Destination Input].ExternalColumns[qp1]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="qp1" />
+                        <externalMetadataColumn
+                          refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\OLE_DST CountyBusinessPattern table.Inputs[OLE DB Destination Input].ExternalColumns[ap_nf]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="ap_nf" />
+                        <externalMetadataColumn
+                          refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\OLE_DST CountyBusinessPattern table.Inputs[OLE DB Destination Input].ExternalColumns[ap]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="ap" />
+                        <externalMetadataColumn
+                          refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\OLE_DST CountyBusinessPattern table.Inputs[OLE DB Destination Input].ExternalColumns[est]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="est" />
+                        <externalMetadataColumn
+                          refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\OLE_DST CountyBusinessPattern table.Inputs[OLE DB Destination Input].ExternalColumns[n1_4]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="n1_4" />
+                        <externalMetadataColumn
+                          refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\OLE_DST CountyBusinessPattern table.Inputs[OLE DB Destination Input].ExternalColumns[n5_9]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="n5_9" />
+                        <externalMetadataColumn
+                          refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\OLE_DST CountyBusinessPattern table.Inputs[OLE DB Destination Input].ExternalColumns[n10_19]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="n10_19" />
+                        <externalMetadataColumn
+                          refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\OLE_DST CountyBusinessPattern table.Inputs[OLE DB Destination Input].ExternalColumns[n20_49]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="n20_49" />
+                        <externalMetadataColumn
+                          refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\OLE_DST CountyBusinessPattern table.Inputs[OLE DB Destination Input].ExternalColumns[n50_99]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="n50_99" />
+                        <externalMetadataColumn
+                          refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\OLE_DST CountyBusinessPattern table.Inputs[OLE DB Destination Input].ExternalColumns[n100_249]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="n100_249" />
+                        <externalMetadataColumn
+                          refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\OLE_DST CountyBusinessPattern table.Inputs[OLE DB Destination Input].ExternalColumns[n250_499]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="n250_499" />
+                        <externalMetadataColumn
+                          refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\OLE_DST CountyBusinessPattern table.Inputs[OLE DB Destination Input].ExternalColumns[n500_999]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="n500_999" />
+                        <externalMetadataColumn
+                          refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\OLE_DST CountyBusinessPattern table.Inputs[OLE DB Destination Input].ExternalColumns[n1000]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="n1000" />
+                        <externalMetadataColumn
+                          refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\OLE_DST CountyBusinessPattern table.Inputs[OLE DB Destination Input].ExternalColumns[n1000_1]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="n1000_1" />
+                        <externalMetadataColumn
+                          refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\OLE_DST CountyBusinessPattern table.Inputs[OLE DB Destination Input].ExternalColumns[n1000_2]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="n1000_2" />
+                        <externalMetadataColumn
+                          refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\OLE_DST CountyBusinessPattern table.Inputs[OLE DB Destination Input].ExternalColumns[n1000_3]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="n1000_3" />
+                        <externalMetadataColumn
+                          refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\OLE_DST CountyBusinessPattern table.Inputs[OLE DB Destination Input].ExternalColumns[n1000_4]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="n1000_4" />
+                        <externalMetadataColumn
+                          refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\OLE_DST CountyBusinessPattern table.Inputs[OLE DB Destination Input].ExternalColumns[censtate]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="censtate" />
+                        <externalMetadataColumn
+                          refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\OLE_DST CountyBusinessPattern table.Inputs[OLE DB Destination Input].ExternalColumns[cencty]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="cencty" />
+                        <externalMetadataColumn
+                          refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\OLE_DST CountyBusinessPattern table.Inputs[OLE DB Destination Input].ExternalColumns[year]"
+                          codePage="1252"
+                          dataType="str"
+                          length="4"
+                          name="year" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\OLE_DST CountyBusinessPattern table.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\OLE_DST CountyBusinessPattern table.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\OLE_DST CountyBusinessPattern table.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\OLE_DST CountyBusinessPattern table.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\OLE_DST CountyBusinessPattern table.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\OLE_DST CountyBusinessPattern table.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files.Paths[Derived Column Output]"
+                  endId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\OLE_DST CountyBusinessPattern table.Inputs[OLE DB Destination Input]"
+                  name="Derived Column Output"
+                  startId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\DER Year.Outputs[Derived Column Output]" />
+                <path
+                  refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files.Paths[Flat File Source Output]"
+                  endId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\DER Year.Inputs[Derived Column Input]"
+                  name="Flat File Source Output"
+                  startId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_SRC TextFiles from 2011-2007.Outputs[Flat File Source Output]" />
+                <path
+                  refId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files.Paths[OLE DB Destination Error Output]"
+                  endId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_DST ErrorOutput text file.Inputs[Flat File Destination Input]"
+                  name="OLE DB Destination Error Output"
+                  startId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\OLE_DST CountyBusinessPattern table.Outputs[OLE DB Destination Error Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:ForEachVariableMappings>
+        <DTS:ForEachVariableMapping
+          DTS:CreationName=""
+          DTS:DTSID="{61FAEC19-C376-451A-A051-FA6BBDD2FF2F}"
+          DTS:ObjectName="{61FAEC19-C376-451A-A051-FA6BBDD2FF2F}"
+          DTS:ValueIndex="0"
+          DTS:VariableName="User::FileName" />
+      </DTS:ForEachVariableMappings>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\SQL Truncate CountyBusinessPattern table"
+      DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{ED339EB3-906E-48CA-B756-D9F56237420C}"
+      DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="SQL Truncate CountyBusinessPattern table"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{622FF495-5314-436D-A20D-6FE4E292CED9}"
+          SQLTask:SqlStatementSource="Truncate table [dbo].[CountyBusinessPattern];" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{835EE41D-883A-4D48-85BA-240E8F5B9108}"
+      DTS:From="Package\SQL Truncate CountyBusinessPattern table"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\FELC - Load 2011 - 2007 text files" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="sql11">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="228,42"
+          Id="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files"
+          TopLeft="22.5,22.5" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="280,120"
+          Size="280,162"
+          Id="Package\FELC - Load 2011 - 2007 text files"
+          TopLeft="244,157.5" />
+        <NodeLayout
+          Size="280,42"
+          Id="Package\SQL Truncate CountyBusinessPattern table"
+          TopLeft="237.5,55.5" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="380.75,97.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <AnnotationLayout
+          Text="Why we have two packages to load the 'CountyBusinessPattern' table?&#xA;&#xA;1) The reason is the data structure is different between 2011-2007 and 2006-1998&#xA;     We have more columns in 2011-2007 than 2006-1998"
+          ParentId="Package"
+          FontInfo="{assembly:Null}"
+          Size="460,88"
+          Id="b35d40e8-286c-42ba-9faf-2468bb5dbdd6"
+          TopLeft="532,59" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="260,42"
+          Id="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\OLE_DST CountyBusinessPattern table"
+          TopLeft="316.5,212.5" />
+        <NodeLayout
+          Size="260,42"
+          Id="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_DST ErrorOutput text file"
+          TopLeft="316.5,314.5" />
+        <NodeLayout
+          Size="260,42"
+          Id="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\FF_SRC TextFiles from 2011-2007"
+          TopLeft="316.5,8.5" />
+        <NodeLayout
+          Size="260,42"
+          Id="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\DER Year"
+          TopLeft="316.5,90" />
+        <EdgeLayout
+          Id="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files.Paths[Flat File Source Output]"
+          TopLeft="446.5,50.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,39.5"
+              Start="0,0"
+              End="0,32">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,32" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files.Paths[Derived Column Output]"
+          TopLeft="446.5,132">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,80.5"
+              Start="0,0"
+              End="0,73">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,73" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files.Paths[OLE DB Destination Error Output]"
+          TopLeft="446.5,254.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-73.20890625,20.533203125,146.4178125,11.43359375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <AnnotationLayout
+          Text="1) This Derived column 'Year' is being extracted from the 'name' of the text file&#xA;    &#xA;     EXample : C:\USCountyBusinessPatterns\SourceTextFiles_2011_2007/cbp07co.txt&#xA;                  &#xA;2) The following expression is used to extract the two digit year from the file name &#xA;     and prefixing with either &quot;19&quot; OR &quot;20&quot; to the 'year'&#xA;   &#xA;    (DT_STR,2,1252)SUBSTRING(RIGHT(@[User::FileName],FINDSTRING(REVERSE(@[User::FileName]),&quot;\\&quot;,1) - 1),4,2) == &quot;98&quot; || &#xA;    (DT_STR,2,1252)SUBSTRING(RIGHT(@[User::FileName],FINDSTRING(REVERSE(@[User::FileName]),&quot;\\&quot;,1) - 1),4,2) == &quot;99&quot; ? &#xA;    (DT_STR,4,1252)((DT_STR,2,1252)&quot;19&quot; + (DT_STR,2,1252)SUBSTRING(RIGHT(@[User::FileName],FINDSTRING(REVERSE(@[User::FileName]),&quot;\\&quot;,1) - 1),4,2)) : &#xA;    (DT_STR,4,1252)((DT_STR,2,1252)&quot;20&quot; + (DT_STR,2,1252)SUBSTRING(RIGHT(@[User::FileName],FINDSTRING(REVERSE(@[User::FileName]),&quot;\\&quot;,1) - 1),4,2))&#xA;"
+          ParentId="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files"
+          FontInfo="{assembly:Null}"
+          Size="849,216"
+          Id="5fcef80a-16b6-43c8-93e3-964917c5d40a"
+          TopLeft="606,54.5" />
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\FELC - Load 2011 - 2007 text files\DFT Load 2011 - 2007 text files\OLE_DST CountyBusinessPattern table">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

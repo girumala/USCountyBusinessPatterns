@@ -1,0 +1,17 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "USCountyBusinessPatternsDW", "USCountyBusinessPatternsDW\USCountyBusinessPatternsDW.dtproj", "{453B051E-ABFD-47F5-A126-8AC5C24541FD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Development|Default = Development|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{453B051E-ABFD-47F5-A126-8AC5C24541FD}.Development|Default.ActiveCfg = Development
+		{453B051E-ABFD-47F5-A126-8AC5C24541FD}.Development|Default.Build.0 = Development
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
